@@ -9,11 +9,9 @@ Phạm vi hiện tại: tạo nội dung/media trong chat, lưu local, khách t�
 - Công cụ quick_validate của skill-creator xác nhận hợp lệ cả skill vận hành và entrypoint cài đặt.
 - 9BizClaw hiện có: đã cập nhật tệp của chính skill đăng ký sẵn, inventory xác nhận eligible/modelVisible, doctor xác nhận local-content và hai engine sẵn sàng; nội dung cũ vẫn được giữ.
 - Ghi nhận môi trường: CLI native --force rollback vì EPERM khi đổi tên backup trên Windows. Đã sao lưu rồi cập nhật tệp của skill có sẵn, không thay quyền/config/skill khác. Đây không phải bằng chứng bộ cài nâng cấp native đã thành công trên mọi máy.
+- Lượt agent 9BizClaw thật qua Gateway đang chạy: tạo bài khoảng 100 chữ và ảnh bằng engine local, mã kiemthu-local-110. Kiểm tra độc lập xác nhận caption trong kết quả trùng caption.txt và state, đủ noi-dung.md/PNG 1080×1350; ảnh đã được xem trực tiếp. Tool của lượt thử chỉ có exec/process, không gọi Google/Facebook, tạo lịch hay gửi kênh ngoài.
 
-## Đang xác minh
-
-- Một lượt agent 9BizClaw tạo bài và ảnh thật bằng engine local, đọc lại đúng file; không đăng hoặc kết nối dịch vụ ngoài.
-- Gói tải lại từ GitHub và GitHub Actions cho phiên bản 1.1 trên Windows, macOS, Linux.
+- [GitHub Actions mã f29d173](https://github.com/phuongnguyendhtm/freeup-social-content-agent/actions/runs/39941231243) đạt trên Windows, macOS và Ubuntu với Node.js 22.
 
 ## Giới hạn
 

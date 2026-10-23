@@ -8,5 +8,6 @@
   "features":["ideas","writing","images","carousel","infographic","text-video","local-files"],
   "hostInstallers":["9bizclaw","openclaw","codex","claude"],
   "allHostAgentSessionsVerified":false,
+  "native9BizClawLocalArticleAndImageVerified":true,
   "assetsOrigin":"FreeUp originals; see assets/manifest.json"
 }
