@@ -4,8 +4,9 @@
 - Mẫu FreeUp đã sao chép, làm sạch: https://docs.google.com/spreadsheets/d/1N2vWZTWNfrXVtVJXM2MUlFf5nQ0EHw3a1LS7cw7-IUc/edit
 - Tạo bản riêng: https://docs.google.com/spreadsheets/d/1N2vWZTWNfrXVtVJXM2MUlFf5nQ0EHw3a1LS7cw7-IUc/copy
 - Sơ đồ máy đọc: `sheet-schema.json` cạnh file này. Phải đọc file đó trước khi bind hoặc đồng bộ.
+- Bản mẫu cố định đóng gói: `assets/templates/FreeUp-Content-Dashboard.xlsx` trong repo/skill; là bản export trực tiếp từ mẫu FreeUp sạch, không phải workbook do agent tự thiết kế. SHA-256 nằm trong assets/manifest.json.
 
-Sao chép **cả workbook** bằng công cụ Drive copy của khách. Không ghi vào hai ID mẫu trên. Thiếu quyền thì hướng dẫn cấp quyền đúng mẫu; không tự thiết kế Sheet khác. Không chạy menu/hàm setupSystem của Apps Script vì có thể xóa tab.
+Ưu tiên sao chép **cả workbook** bằng công cụ Drive copy của khách. Không ghi vào hai ID mẫu trên. Nếu tài khoản khách chưa có quyền mẫu cloud, dùng đúng file mẫu đóng gói đã kiểm checksum để import vào Drive khách thành Google Sheets; sau đó xác minh cả header và dropdown trước khi bind. Đây là nhập bản sao mẫu cố định, không tạo Sheet tùy ý. Nếu không đọc được cả hai bản mẫu thì báo cần quyền/file mẫu, không tự thiết kế thay thế. Không chạy menu/hàm setupSystem của Apps Script vì có thể xóa tab.
 
 `💡 IDEA HUB`: A ID, B nguồn, C nội dung/link, D hook, E góc nhìn, F trụ cột, G phễu, H định dạng, I trạng thái, J thời gian. Duyệt sản xuất: **✅ DUYỆT - LÀM NGAY**.
 

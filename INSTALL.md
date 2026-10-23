@@ -18,6 +18,6 @@ OpenClaw bố cục chuẩn khác bố cục vendor của 9BizClaw: dùng `--sta
 
 4. Lấy skillRoot/project từ receipt, chạy `node <skillRoot>/freeup-social-content/runtime/setup.cjs` để cài engine và Chromium bằng lockfile. Chạy `node <skillRoot>/freeup-social-content/runtime/cli.cjs doctor --project <project>`.
 5. 9BizClaw/OpenClaw: kiểm tra native inventory xác nhận skill eligible. Codex/Claude Code: mở lượt/chat mới nếu host cần refresh rồi gọi skill bằng tên; phải thử nhận một yêu cầu thật trước khi nói đã nhận diện thành công.
-6. Đọc `references/thiet-lap.md` và `references/sheet-mau.md` của skill vừa cài; sao chép Sheet bằng kết nối khách và bind bản riêng. Chỉ tạo lịch/đăng bài khi chủ đã duyệt phạm vi tương ứng.
+6. Đọc `references/thiet-lap.md` và `references/sheet-mau.md` của skill vừa cài; sao chép Sheet bằng kết nối khách hoặc import đúng bản mẫu XLSX đóng gói khi thiếu quyền cloud, kiểm tra cấu trúc và bind bản riêng. Chỉ tạo lịch/đăng bài khi chủ đã duyệt phạm vi tương ứng.
 
 Mỗi lần cài lưu backup phần skill trước đó dưới `.freeup-backups` trong workspace. Dữ liệu trong `freeup-social-content-data` giữ nguyên. Muốn khôi phục: dừng tác vụ FreeUp, dùng cơ chế quản lý skill của host để cài lại bản backup, giữ dữ liệu và xác minh inventory. Không khôi phục toàn bộ config bằng bản cũ.

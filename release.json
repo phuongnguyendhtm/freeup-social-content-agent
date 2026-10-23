@@ -4,9 +4,14 @@
  "repository":"https://github.com/phuongnguyendhtm/freeup-social-content-agent",
  "skill":"freeup-social-content",
  "templateId":"1N2vWZTWNfrXVtVJXM2MUlFf5nQ0EHw3a1LS7cw7-IUc",
- "status":"candidate",
+ "status":"beta",
  "hostInstallers":["9bizclaw","openclaw","codex","claude"],
  "liveFacebookVerified":false,
  "allHostAgentSessionsVerified":false,
+ "native9BizClawInstallationVerified":true,
+ "native9BizClawReplyMatchesSavedContent":true,
+ "liveSheetWriteAndReadbackVerified":true,
+ "native9BizClawGoogleSheetsVerified":false,
+ "nativeCliSheetBlock":"no_identity at plugin-before-tool-call; verify through an authenticated owner chat",
  "assetsOrigin":"FreeUp originals; see assets/manifest.json"
 }

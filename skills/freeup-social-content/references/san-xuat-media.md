@@ -2,6 +2,8 @@
 
 Mẫu mặc định được tạo riêng cho FreeUp, trong **Tài nguyên đầu vào**. Không tải ảnh/video/nhạc tác giả. Khách có thể thêm nguồn riêng. Chọn đúng nội dung đã viết; không nhét nguyên bài dài vào ảnh.
 
+Cập nhật mẫu: chạy `assets-update --version v1.0.0-beta.1` trong giai đoạn thử nghiệm. Lệnh chỉ lấy manifest/file có checksum từ GitHub FreeUp và giữ file khách đã sửa. Sau khi có release ổn định mới dùng `assets-update` không chỉ định phiên bản. Không dùng nhánh đang phát triển thay cho bản phát hành.
+
 Ghi brief JSON (dữ liệu, không phải shell):
 
 ```json

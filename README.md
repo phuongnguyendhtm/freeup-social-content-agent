@@ -1,5 +1,7 @@
 # FreeUp Content Agent
 
+**Bản thử nghiệm v1.0.0-beta.1.** Xem các phần đã và chưa nghiệm thu trong [KIEM-THU.md](KIEM-THU.md) trước khi phát cho khách dùng thật.
+
 Khách nêu chủ đề trong **9BizClaw/OpenClaw** → agent trả kết quả ngay trong chat → cập nhật cùng nội dung lên **Google Sheets mẫu FreeUp**. Viết bài, tạo ảnh/carousel/infographic/video, chỉnh sửa, duyệt và quản lý đăng fanpage.
 
 ## Cài bằng cách gửi link cho agent
@@ -29,7 +31,7 @@ Tài nguyên mẫu trong gói được tạo mới cho FreeUp. Cập nhật từ
 
 ## Sheet chuẩn
 
-[Mẫu FreeUp](https://docs.google.com/spreadsheets/d/1N2vWZTWNfrXVtVJXM2MUlFf5nQ0EHw3a1LS7cw7-IUc/edit) được sao chép từ mẫu người dùng cung cấp. Mỗi khách dùng bản sao riêng. Agent phải đọc [reference cố định](skills/freeup-social-content/references/sheet-mau.md); thiếu quyền thì báo cần cấp quyền, không tự tạo workbook khác.
+[Mẫu FreeUp](https://docs.google.com/spreadsheets/d/1N2vWZTWNfrXVtVJXM2MUlFf5nQ0EHw3a1LS7cw7-IUc/edit) được sao chép từ mẫu người dùng cung cấp. Mỗi khách dùng bản sao riêng. Agent phải đọc [reference cố định](skills/freeup-social-content/references/sheet-mau.md). Nếu chưa có quyền bản cloud, dùng [bản XLSX cố định trong gói](assets/templates/FreeUp-Content-Dashboard.xlsx) để import vào Drive khách rồi xác minh header/dropdown; không tự tạo workbook tùy ý.
 
 ## Phạm vi bản đầu
 
