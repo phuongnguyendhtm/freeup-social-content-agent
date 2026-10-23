@@ -1,8 +1,8 @@
 {
-  "version": "1.1.0-beta.1",
+  "version": "2.0.0-beta.1",
   "owner": "phuongnguyendhtm",
   "repository": "freeup-social-content-agent",
-  "origin": "Created specifically for FreeUp; no author media copied.",
+  "origin": "FreeUp original samples and brand assets provided by owner; Foxy reference supplied by user via Drive. No source author media copied.",
   "license": "FreeUp gift recipients may use and adapt these original sample assets for their content.",
   "assets": [
     {
@@ -13,46 +13,74 @@
       "bytes": 352844
     },
     {
+      "file": "originals/freeup-background.mp4",
+      "destination": "Video nền/freeup-background.mp4",
+      "kind": "footage",
+      "sha256": "6e22526b7117ef03cb527b3ebb70d7ee748f2bfa63a71c1aed63a6d410d23ff8",
+      "bytes": 236222
+    },
+    {
       "file": "originals/freeup-mau-anh.png",
       "destination": "Ảnh mẫu/freeup-mau-anh.png",
       "kind": "image",
-      "sha256": "7d74e4f22bf90ff509a52def210bfb98320381d4933ba6e5a0c5b7d625258986",
-      "bytes": 60910
+      "sha256": "46ba4adf75f47e83bf3f3610d4e0a5cc2d0ac1c8e7ba48763daba6d70dd735b1",
+      "bytes": 43221
     },
     {
       "file": "originals/freeup-mau-carousel-1.png",
       "destination": "Ảnh mẫu/freeup-mau-carousel-1.png",
       "kind": "carousel",
-      "sha256": "337970a50f2c9b65d614dce6076173b412e7a27f7aae56da4522656bb53ddba0",
-      "bytes": 53588
+      "sha256": "14120f461c7095219006d970c55a91b3b0587e5281e9022b29d1c349157346e5",
+      "bytes": 34653
     },
     {
       "file": "originals/freeup-mau-carousel-2.png",
       "destination": "Ảnh mẫu/freeup-mau-carousel-2.png",
       "kind": "carousel",
-      "sha256": "70e836086e2d7577f3927ea6206c539d49245bd9c33a8a0deca9b13512c7082a",
-      "bytes": 54125
+      "sha256": "cdbc47dc3d2df02f26acdf2af9051d059a7135586c814c49a21a5895d18bc99b",
+      "bytes": 35647
     },
     {
       "file": "originals/freeup-mau-carousel-3.png",
       "destination": "Ảnh mẫu/freeup-mau-carousel-3.png",
       "kind": "carousel",
-      "sha256": "6f9fab5f19e22c0668dcda775b34aeb9ddd96090045790fbd7e1c5164cfa3f59",
-      "bytes": 51204
+      "sha256": "79537a440bf1d998f56e5aa5f3c7583843d12d407921c045400cc56c812fc957",
+      "bytes": 32857
     },
     {
       "file": "originals/freeup-mau-infographic.png",
       "destination": "Ảnh mẫu/freeup-mau-infographic.png",
       "kind": "infographic",
-      "sha256": "98a663cc3187b05136688e4586e60569b976f004482de79b268839d7f618bc2c",
-      "bytes": 76350
+      "sha256": "944db9f12eb326a468376cd4cbe29ca284b5061162215d6905b3bf822b5fb9d5",
+      "bytes": 57383
     },
     {
       "file": "originals/freeup-mau-video.mp4",
       "destination": "Video mẫu/freeup-mau-video.mp4",
-      "kind": "video",
-      "sha256": "9be5e4cb2e7bbdbb0cf6b83a5e6dc2a5395a61f75ff3c2479c6742f313aece12",
-      "bytes": 111115
+      "kind": "broll",
+      "sha256": "2ed7599183198b5e13a50b776704a3fac04743afa64afa93190967b5d0dcc2b8",
+      "bytes": 462918
+    },
+    {
+      "file": "guide/freeup-huong-dan-ngang.png",
+      "destination": "Hướng dẫn/freeup-huong-dan-ngang.png",
+      "kind": "guide",
+      "sha256": "6dfd3ec1bc775e6f3e5f0a760acf38095d375c19c69b841a616341304b942259",
+      "bytes": 1743388
+    },
+    {
+      "file": "brand/freeup-logo.png",
+      "destination": "Nhận diện FreeUp/freeup-logo.png",
+      "kind": "logo",
+      "sha256": "2f06034cded005c58836e724c71ba1654025e71e3eea00ee1b2faf381a89cbb5",
+      "bytes": 167468
+    },
+    {
+      "file": "brand/foxy-reference.png",
+      "destination": "Nhận diện FreeUp/foxy-reference.png",
+      "kind": "mascot",
+      "sha256": "13fc274cec7843ba5fad54c5f6734f5caee87ecc7e3b663929cb3db95f758503",
+      "bytes": 984134
     }
   ]
 }

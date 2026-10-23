@@ -1,20 +1,9 @@
-# Sản xuất media
+# Sản xuất và kiểm tra
 
-Dùng nội dung đã viết và tài nguyên FreeUp trong **Tài nguyên đầu vào**, hoặc chất liệu khách cung cấp. Chọn ý chính vừa với hình; không nhét cả bài dài vào ảnh.
+Đọc tiêu chuẩn đầy đủ của chuyên môn đã chọn. brief JSON dùng id/channel/format, title/body/points/layout; carousel có slides. Sáu layout ảnh: portrait, split, center, metric, tweet, venn. Carousel: cover, portrait, center, split, list, quote, before-after, tags, checklist, device. Infographic: duel, growth, insight. Ảnh 1080×1350, carousel 1080×1080, infographic 1080×1350. Ảnh mục tiêu 20–40 từ, tối đa 50 từ; carousel khoảng 30–50 từ/trang nhưng có thể ít hơn khi đủ ý; infographic tối đa 4–5 ý. Caption theo tiêu chuẩn định dạng nguồn, không lấy chữ ngắn trên ảnh làm caption thay cho bài gốc.
 
-```json
-{"id":"bai-001","format":"image","channel":"Facebook","brand":"Thương hiệu khách","title":"Rõ quyền. Rõ việc.","body":"Đội ngũ tự chủ khi biết giới hạn quyết định.","points":["Chốt kết quả cần đạt.","Thống nhất lúc cần báo lại."],"footer":"Thương hiệu khách"}
-```
+Ảnh thật truyền asset là đường dẫn trong project; portrait bắt buộc đúng người. Không có ảnh thì dùng bố cục chữ. Có thể tạo HTML riêng theo CSS nguồn: htmlFile trong project, có main bao vùng nội dung, không JS/iframe/on-event/nguồn mạng. Nhúng ảnh local bằng data URI (runtime/design.cjs data) hoặc dùng data-asset="Tài nguyên đầu vào/...png" trên img; renderer tự nhúng. Không để data-img-vault chưa được giải quyết. HTML riêng vẫn kiểm chữ/tràn. Lỗi tràn: rút chữ/chia trang hoặc chỉnh bố cục rồi render lại; không báo đạt.
 
-Chạy `render --input brief.json`:
+Video dùng format=broll hoặc reels, scenes=[{layout,footage,duration,headline,body,points,voice,voice_text,subtitles:[{text,start,end}],visual_content}]. footage phải là video thật trong project (có Video nền FreeUp); voice là audio thật khi có voice_text. music là đường dẫn nhạc. Dùng local assets; không gọi đường dẫn hoặc download tác giả. B-roll sáu layout tweet/pov/pill/quote/secret/metric; Reels tám layout title_hook/podcast_wave/list_cascade/minimal_warning/quote_box/split_compare/statistic_pop/tweet_overlay. Reels mặc định 45–60 giây, 5–8 cảnh; khách được yêu cầu ngắn hơn, giữ đủ ý hoặc chia tập. Nội dung riêng của tám layout truyền trong visual_content theo reference nguồn. Có TTS native được phép thì dùng nó và lấy file thật; thiếu giọng/timing thì hỏi khách chọn cung cấp hay dùng video nhạc, không hứa có giọng đọc/karaoke.
 
-- image: 1080×1350.
-- carousel: thêm `slides:[{title,body,points},...]`, 2–20 trang 1080×1350.
-- infographic: 1080×1920, chia ý ngắn.
-- video: 1080×1920, `duration:8`, `music:"Tài nguyên đầu vào/Nhạc nền/freeup-focus.wav"`; video nền chữ/chuyển động có nhạc. Video người thật/giọng AI cần nguồn và công cụ tương ứng; kiểm tra khả năng host trước khi cam kết.
-
-Nếu TEXT_OVERFLOW, rút gọn hoặc tách trang. Render trả danh sách file thật; lưu chúng bằng save vào đúng id/format/channel, dùng expectedRevision nếu đã có. Khi sửa bài cũ, truyền createdAt của bản đã lưu vào brief để giữ thư mục cùng ngày.
-
-Đính kèm ảnh/video trong câu trả lời bằng khả năng host. Nếu bị giới hạn gửi file, báo rõ và cho khách vị trí mở file trên máy; không tìm đường vượt quyền. Khách lấy caption.txt và thành phẩm để tự đăng.
-
-Cập nhật mẫu qua `assets-update` (mặc định tag đúng phiên bản đã cài), hoặc `assets-update --version v1.1.0-beta.1`. Chỉ tải GitHub FreeUp và kiểm SHA-256, giữ file khách đã sửa. Không cần kết nối Google/Facebook.
+CLI render tạo PNG/MP4 và QA. Xem ảnh thực trước bàn giao; kiểm dấu tiếng Việt, thương hiệu, chữ dễ đọc, không tràn, đúng tỉ lệ, caption nguyên vẹn. Video phải xem khung đầu/giữa/cuối, nghe audio nếu có và kiểm thời lượng; QA kỹ thuật không thay cho duyệt nội dung. Gửi file trong chat, khách tự đăng.

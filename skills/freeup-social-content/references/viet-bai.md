@@ -1,7 +1,5 @@
-# Viết theo nhu cầu khách
+# Biên tập
 
-Dùng model hiện tại và hồ sơ thương hiệu có sẵn. Chưa biết thì hỏi ngắn về thương hiệu/sản phẩm, khách mục tiêu và giọng văn khi các thông tin này làm thay đổi bài. Với yêu cầu rõ ràng, làm ngay theo chủ đề, định dạng và độ dài khách nêu.
+Đọc đầy đủ reference của freeup-viet-bai. Hồ sơ quyết định giọng, xưng hô, từ cấm, khách hàng và USP. Story Ads có hook ba câu, soi gương, câu chuyện, bước ngoặt, giá trị 50–60%, bài học và CTA mềm; không ép mọi định dạng thành quảng cáo nếu khách yêu cầu khác.
 
-Đề xuất ý tưởng ngắn, phân biệt được từng hướng. Khi viết bài, dùng một thông điệp chính, mở bài cụ thể, triển khai dễ hiểu và lời kêu gọi phù hợp. Không bịa số liệu, khách hàng hoặc kết quả kinh doanh. Giữ chi tiết khách cung cấp.
-
-Khách có thể yêu cầu viết trực tiếp, không phải duyệt ý tưởng trước. Lưu kết quả qua save; trả cùng nội dung đã lưu trong chat và mã bài để lấy lại. Sửa bản hiện tại theo yêu cầu, giữ các phần khách không yêu cầu đổi.
+Nghiên cứu có nguồn thật và phân biệt quan sát/suy luận; không giả trải nghiệm của chủ thương hiệu. Giữ master_content.md nguyên vẹn khi làm ảnh/carousel/video. Chuỗi bình luận: bài dẫn dưới 30 từ và 5–10 bình luận hoàn chỉnh, lưu cả chuỗi để khách tự đăng. Không tự đặt bình luận thật lên mạng.

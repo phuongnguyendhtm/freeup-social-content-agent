@@ -1,0 +1,52 @@
+{
+  "skills": [
+    {
+      "name": "freeup-nghien-cuu",
+      "description": "Nghiên cứu nguồn, hook và insight thực tế; dùng khi học viên yêu cầu nghiên cứu thị trường hoặc ý tưởng có căn cứ.",
+      "source": "skills/researcher/SKILL.md",
+      "format": "idea"
+    },
+    {
+      "name": "freeup-viet-bai",
+      "description": "Viết bài gốc theo giọng thương hiệu và cấu trúc Story Ads; dùng khi học viên yêu cầu viết hoặc sửa bài.",
+      "source": "skills/copywriter.md",
+      "format": "text"
+    },
+    {
+      "name": "freeup-anh",
+      "description": "Thiết kế ảnh đơn theo sáu bố cục, lựa chọn theo nội dung và ảnh thực có; dùng khi tạo ảnh cho bài.",
+      "source": "skills/media/image_specialist.md",
+      "format": "image"
+    },
+    {
+      "name": "freeup-carousel",
+      "description": "Chuyển bài thành carousel 1080×1080 với từng trang ngắn, bố cục và thương hiệu nhất quán.",
+      "source": "skills/media/carousel_specialist.md",
+      "format": "carousel"
+    },
+    {
+      "name": "freeup-infographic",
+      "description": "Tạo infographic so sánh, lộ trình hoặc lưới kiến thức 1080×1350 theo bộ tiêu chuẩn FreeUp.",
+      "source": "skills/media/infographic_specialist.md",
+      "format": "infographic"
+    },
+    {
+      "name": "freeup-binh-luan",
+      "description": "Soạn bài dẫn và chuỗi 5–10 bình luận từ nội dung gốc để học viên tự đăng.",
+      "source": "skills/media/comment_chain_specialist.md",
+      "format": "comment_chain"
+    },
+    {
+      "name": "freeup-broll",
+      "description": "Tạo video B-roll từ footage có thật, một hook và sáu lựa chọn bố cục, nhạc/thương hiệu.",
+      "source": "skills/media/reels_broll_specialist.md",
+      "format": "broll"
+    },
+    {
+      "name": "freeup-reels",
+      "description": "Sản xuất Reels nhiều cảnh với kịch bản, video thật, giọng đọc/phụ đề khi có dữ liệu và tám layout nguồn.",
+      "source": "skills/media/reels_specialist.md",
+      "format": "reels"
+    }
+  ]
+}

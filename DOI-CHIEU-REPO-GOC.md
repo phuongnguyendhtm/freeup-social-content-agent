@@ -1,35 +1,25 @@
-# Đối chiếu nguồn cho quà tặng học viên 9BizClaw
+# Đối chiếu bản 2.0 với nguồn
 
-Kiểm tra ngày 23/10/2026: repo `phuongnguyendhtm/FreeUp-Content-Agent`, commit `65ebff0eb4cc2510b47ab7900aef81080c3d91b2`. Đây là kết quả đọc mã/hướng dẫn, không phải xác nhận đã chạy các engine nguồn.
+Nguồn phuongnguyendhtm/FreeUp-Content-Agent, commit 65ebff0eb4cc2510b47ab7900aef81080c3d91b2. Bản 1.1 dùng renderer đơn giản đã được thay bằng bản 2.0; không dùng kết quả v1.1 làm bằng chứng giữ đủ tiêu chuẩn.
 
-## Kết luận
-
-Repo nguồn có tiêu chuẩn sản xuất chi tiết. Bản quà tặng 1.1 hiện tại đã bỏ tích hợp nhưng dùng một renderer mẫu đơn giản, chưa giữ đầy đủ logic thiết kế nguồn. Không được coi bản 1.1 là bản chuyển đổi đầy đủ của repo nguồn.
-
-Đối tượng bàn giao là học viên đã mua 9BizClaw. Họ ra lệnh trong chat 9BizClaw; model và công cụ của 9BizClaw điều phối sản xuất, lưu local, trả nội dung và file để khách tự đăng. Google Sheets và tự đăng Facebook không thuộc phạm vi theo yêu cầu hiện tại.
-
-## Phần cần giữ khi chuyển đổi
-
-| Năng lực nguồn | Tiêu chuẩn đã tìm thấy |
+| Nguồn | Bản quà tặng 9BizClaw |
 |---|---|
-| Researcher | Tách dữ liệu nghiên cứu khỏi bài sáng tạo; thu hook, insight, cảm xúc, dàn ý và nguồn thật. |
-| Copywriter | Đọc hồ sơ thương hiệu, đại từ, giọng văn, từ tránh dùng; bài dài có mạch mở đầu, kết nối, câu chuyện, bước ngoặt, giá trị, đúc kết, CTA. Không biến yêu cầu kể chuyện thành việc bịa trải nghiệm. |
-| Image Specialist | Caption giữ toàn bộ bài; ảnh chỉ lấy thông điệp chính. Sáu hướng bố cục theo nội dung: chân dung, so sánh, thẻ giữa, số liệu, thẻ trích dẫn và giao thoa. Kiểm tra ảnh thực có trước khi chọn chân dung. |
-| Carousel Specialist | Khung 1080×1080, khoảng 30–50 từ/trang; bìa theo nguồn ảnh; trang nội dung có thể là danh sách, so sánh, checklist, trích dẫn. Giữ toàn bài trong caption. |
-| Infographic Specialist | Khung 1080×1350, chọn bố cục so sánh/lộ trình/lưới kiến thức; tối đa 4–5 luận điểm chính. |
-| Comment Chain | Soạn bài dẫn ngắn và 5–10 bình luận có thứ tự để khách tự sao chép; bỏ phần xuất bản tự động. |
-| Reels B-roll | Một hook trên nền video, chọn bố cục theo nội dung, màu thương hiệu, vùng tránh watermark; giữ caption đầy đủ. Cần footage và engine thật, không thay bằng ảnh tĩnh rồi gọi là đã tương đương. |
+| Researcher | freeup-nghien-cuu; nguồn thật, hook/insight/cảm xúc/dàn ý |
+| Copywriter | freeup-viet-bai; giọng/xưng hô/từ tránh dùng, Story Ads bảy phần |
+| Image specialist | freeup-anh; đủ sáu hướng, tối đa 50 từ, caption gốc |
+| Carousel specialist | freeup-carousel; 1080×1080, khoảng 30–50 từ/trang, cover theo ảnh, list/quote/grid/before-after/tags/checklist/device |
+| Infographic specialist | freeup-infographic; 1080×1350, duel/growth/insight, tối đa 4–5 ý |
+| Comment chain | freeup-binh-luan; bài dẫn dưới 30 từ và 5–10 bình luận |
+| B-roll specialist | freeup-broll; sáu khối CSS nguồn, hook + footage thật + nhạc, caption gốc |
+| Reels specialist + engine | freeup-reels; tám component Remotion nguồn và karaoke theo timing thực, mặc định 45–60 giây/5–8 cảnh |
+| Setup/điều phối | freeup-social-content; hồ sơ có nguồn, chỉ hỏi thiếu, xác nhận rồi gửi ảnh ngang logo/Foxy/menu 1–8 |
 
-## Điểm cần sửa, không bê nguyên
+Mỗi specialist có references/TIEU-CHUAN.md chứa toàn bộ tiêu chuẩn chuyên môn nguồn, chuyển đường dẫn sang tiếng Việt và chỉ dẫn chạy bằng CLI mới. Các ví dụ CSS/HTML được giữ để agent tạo bố cục riêng, renderer hỗ trợ htmlFile; không ép mọi bài vào cùng mẫu mặc định. Tiêu chuẩn là hướng dẫn cho model; agent vẫn cần xem sản phẩm thật để duyệt chất lượng.
 
-- Workflow ảnh cho 50–80 từ, specialist lại hướng 20–40 từ và chặn trên 50: cần thống nhất. Đề xuất áp dụng hướng dẫn specialist: mục tiêu 20–40, tối đa 50 từ hiển thị cho ảnh đơn.
-- Mô tả workflow carousel nói 10 trang nhưng specialist không giới hạn. Số trang phải theo nội dung/yêu cầu; không mặc định mọi bài đều 10 trang. Giới hạn batch kỹ thuật phải công bố riêng.
-- Workflow gọi `skills/brain/vietbai.md` nhưng cây repo không có đường dẫn đó; hướng dẫn viết thật nằm ở `skills/copywriter.md`.
-- Setup vẫn nhắc 100X/Antigravity và thiết lập tài khoản đăng. Phải thay bằng onboarding FreeUp trong 9BizClaw, dùng hồ sơ khách sẵn có; chỉ hỏi thông tin còn thiếu.
-- Nhiều bước cuối gọi google_sync_engine trong workflow và specialist, không chỉ README. Phải gỡ mọi điểm gọi cùng Sheet action/Apps Script/config liên quan trong gói bàn giao.
-- Các file specialist Markdown và workflow `.agents/workflows` không tự chứng minh được 9BizClaw đã nhận skill. Cần đóng gói theo SKILL.md native, cài vào workspace đúng agent và kiểm tra inventory/lượt chat thật.
-- Giữ logic và viết lại hướng dẫn phù hợp; tài nguyên mặc định chỉ từ GitHub FreeUp hoặc do học viên cung cấp, không đóng gói ảnh cá nhân/danh nhân/nhạc của nguồn tham khảo làm dữ liệu khách.
+Đã bỏ mọi adapter/lệnh gọi Google Sheets, Apps Script, duyệt đăng, scheduler và xuất bản Facebook của gói. Không gỡ kết nối chung của 9BizClaw. Caption/bài gốc vẫn lưu local theo mã, định dạng, phiên bản. Khách tự đăng.
 
-## Nghiệm thu chuyển đổi còn thiếu
+Chuẩn hóa mâu thuẫn nguồn: ảnh mục tiêu 20–40, tối đa 50 từ; số trang carousel theo nội dung/yêu cầu; Reels có thể ngắn hơn khi khách yêu cầu nhưng không cắt mất ý âm thầm. Sửa đường dẫn viết bài không tồn tại trong nguồn. Không chuyển dữ liệu tài khoản, ảnh/nhạc cá nhân của tác giả, Google Fonts tải mạng hoặc số lượt xem/phần trăm giả định vào runtime. Giữ component thiết kế nhưng bỏ số liệu mặc định bịa, profile cá nhân hard-code và avatar mạng.
 
-Từng bố cục ảnh/carousel/infographic cần render thật, kiểm chữ, ảnh và thương hiệu; B-roll cần kiểm footage/âm thanh thực. Kiểm một bài từ chat đến thành phẩm trên 9BizClaw. Việc đọc đủ tiêu chuẩn nguồn hoặc test renderer mẫu 1.1 không thay thế các bằng chứng này.
+Tài nguyên: ảnh/video/nhạc mẫu tạo riêng cho FreeUp; logo FreeUp từ bộ nhận diện của chủ sở hữu; Foxy chuẩn ôm trái tim từ file Drive chị cung cấp trong phiên làm việc. Khi nâng cấp, checksum bảo vệ tài nguyên, file khách sửa được giữ lại. Thư mục Media input/output trở thành Tài nguyên đầu vào/Nội dung đã tạo; cấu hình vận hành nằm Dữ liệu vận hành.
+
+Xem KIEM-THU.md cho bằng chứng và giới hạn. Không tuyên bố TTS tiếng Việt hay gửi media ở mọi kênh đã đạt nếu chưa chạy thực tế trên kênh đó.

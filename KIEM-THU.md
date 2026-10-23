@@ -1,22 +1,17 @@
-# Kiểm tra bản 1.1
+# Kiểm thử 2.0.0-beta.1 — 23/10/2026
 
-Phạm vi hiện tại: tạo nội dung/media trong chat, lưu local, khách tự đăng. Google Sheets, duyệt đăng, lịch và xuất bản Facebook đã được gỡ khỏi gói; các bằng chứng đồng bộ/đăng của bản 1.0 không còn là tiêu chí bản này.
+- 37/37 unit đạt: lưu/sửa/phiên bản, migration giữ dữ liệu, path/tài nguyên, bộ cài bốn adapter, đủ chín skill và runtime pointer, hồ sơ thiếu/đủ/xác nhận/sửa, discovery không ghi đè, menu 1–8, video/voice/timing/số liệu.
+- verify:release đạt: version/lockfile, 11 tài nguyên có SHA-256, đủ tám specialist/reference, logo/Foxy/guide và engine; không còn adapter Sheet/scheduler/đăng bài.
+- Render thật và xem contact sheet: sáu bố cục ảnh, mười bố cục carousel (mỗi ca hai trang), ba infographic: 29 PNG, kích thước chuẩn và không tràn. Sáu B-roll có footage chuyển động thật và nhạc. Reels 16 giây chạy đủ tám component nguồn.
+- Bộ cài native 9BizClaw nâng cấp và inventory xác nhận đủ chín skill eligible/modelVisible. Cài đủ Playwright/Chromium, FFmpeg, Remotion. Không sửa model, persona hoặc gỡ skill/kết nối khác.
+- Môi trường Windows có lỗi native EPERM khi đổi tên backup thư mục cũ thiếu SKILL.md. Bộ cài backup và chỉ sửa các tệp package FreeUp có receipt host/workspace/project và package.name khớp, rồi kiểm tra inventory. Không dùng cách này cho lỗi chính sách hoặc thư mục không xác định sở hữu. Sau phục hồi, chạy lại bộ cài native thành công.
 
-## Đã kiểm tra
+- Agent 9BizClaw thật qua Gateway, hai lượt fixture: hỏi đúng bốn trường thiếu, chưa confirm/guide; sau thông tin và xác nhận rõ, ready=true, chọn số 4 đúng specialist, tạo/lưu ba PNG 1080×1080, caption.txt khớp state và có master_content.md. Đã xem ảnh thực. Không gửi kênh ngoài.
+- Reels thật 48.04 giây, tám cảnh, H.264 1080×1920/30fps, AAC stereo có mức âm thanh khác 0; tám cảnh có audio giọng tổng hợp Windows tiếng Anh và karaoke theo timing fixture, nhạc nền trộn. Đây là thử pipeline audio/timing, không phải bằng chứng TTS tiếng Việt tự có trên mọi máy. Đã xem bảng khung hình tám cảnh.
+- Skill-creator quick_validate (Python UTF-8) xác nhận hợp lệ entrypoint cài đặt và chín SKILL.md.
 
-- 20/20 bài kiểm tra tự động đạt: lưu file tiếng Việt, chỉnh sửa/phiên bản, nâng dữ liệu 1.0, loại lệnh tích hợp cũ, cài lại giữ dữ liệu, đường dẫn, tài nguyên và renderer.
-- Bản sao gói sạch: npm ci với omit optional, 20/20 test và verify:release đạt; checksum đủ 7 media, không còn mẫu XLSX/adapter Sheet/scheduler.
-- Công cụ quick_validate của skill-creator xác nhận hợp lệ cả skill vận hành và entrypoint cài đặt.
-- 9BizClaw hiện có: đã cập nhật tệp của chính skill đăng ký sẵn, inventory xác nhận eligible/modelVisible, doctor xác nhận local-content và hai engine sẵn sàng; nội dung cũ vẫn được giữ.
-- Ghi nhận môi trường: CLI native --force rollback vì EPERM khi đổi tên backup trên Windows. Đã sao lưu rồi cập nhật tệp của skill có sẵn, không thay quyền/config/skill khác. Đây không phải bằng chứng bộ cài nâng cấp native đã thành công trên mọi máy.
-- Lượt agent 9BizClaw thật qua Gateway đang chạy: tạo bài khoảng 100 chữ và ảnh bằng engine local, mã kiemthu-local-110. Kiểm tra độc lập xác nhận caption trong kết quả trùng caption.txt và state, đủ noi-dung.md/PNG 1080×1350; ảnh đã được xem trực tiếp. Tool của lượt thử chỉ có exec/process, không gọi Google/Facebook, tạo lịch hay gửi kênh ngoài.
+Giới hạn: fixture cài lại có đủ bốn host, nhưng đối tượng triển khai/thử agent thật là 9BizClaw Windows. Native TTS tiếng Việt và khả năng gửi media tới từng Telegram/Zalo phụ thuộc cấu hình/quyền host; thử CLI không xác nhận đã gửi ra kênh ngoài. Dùng audio thật/TTs được phép khi cần voice; không báo đã có giọng nếu thiếu. Nội dung tạo bằng model cần học viên xem trước khi tự đăng.
 
-- [GitHub Actions mã f29d173](https://github.com/phuongnguyendhtm/freeup-social-content-agent/actions/runs/39941231243) đạt trên Windows, macOS và Ubuntu với Node.js 22.
+Review độc lập toàn bộ nhánh phát hiện bốn lỗi đã sửa và có test RED→GREEN: render ghi đè media cũ; karaoke chậm chuyển dòng; alias danh sách Reels mất ý; HTML riêng nằm ngoài canvas vẫn qua QA. Chromium thật tái hiện lỗi ghi đè và ảnh ngoài khung trước sửa, cả hai đạt sau sửa. Các lần render hiện có thư mục riêng, chỉ save thành công mới đổi media revision.
 
-## Giới hạn
-
-- Bộ cài có adapter bốn host; chưa xác nhận phiên agent thật từ URL trên đủ cả bốn. Agent cần mạng và quyền chạy local.
-- Video engine là nền chữ/chuyển động có nhạc; chưa gồm footage người thật hoặc giọng AI.
-- Khả năng đính kèm file phụ thuộc host/kênh chat. Đường dẫn máy tính không phải link tải từ điện thoại.
-
-Nâng cấp lưu bản dữ liệu cũ trong archive-v1. Kết nối dùng chung và Sheet đã có trong tài khoản của khách được giữ nguyên; FreeUp không gọi chúng.
+- Kiểm parser media native sau guide: kết quả Gateway có payload.mediaUrl/mediaUrls trỏ đúng PNG logo/Foxy/menu số; không chỉ là đường dẫn trong văn bản. Không dùng --deliver hoặc message tool gửi kênh ngoài trong thử nghiệm.

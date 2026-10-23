@@ -1,24 +1,16 @@
-# Cài FreeUp Content Agent
+# Cài trên 9BizClaw
 
-Cần Node.js 22+, quyền chạy local và mạng để tải gói. Agent cài vào máy đang làm việc; môi trường cloud không có quyền vào máy khách phải báo rõ giới hạn.
+1. Tải/clone repo này vào thư mục riêng. Đọc AGENTS.md và SKILL.md; không chạy bộ cài repo tham khảo. Đích mặc định luôn là 9BizClaw, dù Codex/Claude hỗ trợ cài hộ.
+2. Chạy Node 22+ của máy/9BizClaw:
 
-Phạm vi quà tặng: học viên dùng 9BizClaw. Chọn `--host 9bizclaw`, tìm đúng root và workspace/agent từ cấu hình của app. Nếu dùng Codex/Claude để hỗ trợ cài hộ, đích cài vẫn là 9BizClaw; không tự chuyển sang cài cho công cụ đang hỗ trợ. Các adapter khác bên dưới là khả năng kỹ thuật, không phải yêu cầu học viên cài thêm môi trường.
+    node install.cjs --host 9bizclaw --root <thư mục cài 9BizClaw> --agent main
 
-1. Clone/tải ZIP repo này vào thư mục riêng. Xác định host của cuộc trò chuyện hiện tại; chỉ hỏi chọn khi có nhiều host mà không xác định được.
-2. Chạy bộ cài tương ứng:
+Nếu không truyền root, bộ cài đọc %APPDATA%/9BizClaw-v3/install-root.json. Không đoán đường dẫn cài; thiếu pointer thì hỏi vị trí app. --plan chỉ xem đường dẫn. Đọc workspace/agent từ cấu hình app, không sửa bằng tay hoặc đổi workspace. Bộ cài dùng native skills install cho skill mới; skill FreeUp đã đăng ký được sao lưu rồi cập nhật tại chỗ, tránh lỗi khóa thư mục trên Windows. Kiểm tra inventory chín skill eligible. Nếu native từ chối/không có quyền thì báo lỗi, không lách chính sách.
+3. Receipt trả skillRoot/project; chín skill gồm freeup-social-content và tám chuyên môn. Chạy node <skillRoot>/freeup-social-content/runtime/cli.cjs doctor. Khi cần media, chạy node <skillRoot>/freeup-social-content/runtime/setup.cjs để cài dependencies bằng lockfile và Chromium; doctor lại. Không tự thêm API key.
+4. Mở lượt/chat mới nếu host cần refresh. Đọc SKILL.md đã cài; thử profile-status và hỏi khách kích hoạt. Kiểm tra thông tin sẵn có, xác nhận, hỏi thiếu; đủ+confirmed thì gửi ảnh hướng dẫn menu 1–8 trong chat.
 
-```text
-node install.cjs --host auto --workspace <workspace của khách>
-node install.cjs --host codex --workspace <workspace của khách>
-node install.cjs --host claude --workspace <workspace của khách>
-node install.cjs --host 9bizclaw --root <thư mục cài 9BizClaw> --agent main
-node install.cjs --host openclaw --state-dir <state> --cli <openclaw.mjs> --agent main
-```
+Cài lại giữ nội dung/hồ sơ/tài nguyên khách và skill/kết nối chung. Backup phần skill ở .freeup-backups. Dữ liệu v1 được lưu archive-v1 trước chuyển đổi; chỉ dọn tệp tích hợp FreeUp đã nghỉ dùng. Không gỡ Google/Facebook dùng chung của host.
 
-9BizClaw tự tìm root từ install-root.json nếu có. OpenClaw theo bố cục vendor có thể dùng `--root`. Thêm `--node` nếu CLI native cần Node riêng; `--plan` để xem đường dẫn. Native install bị từ chối thì dừng tại bước đó.
+Adapter kỹ thuật khác (không yêu cầu học viên cài thêm): --host openclaw --state-dir <state> --cli <openclaw.mjs>; --host codex/claude --workspace <workspace>. --node chỉ Node native riêng. Auto mặc định 9bizclaw.
 
-3. Lấy skillRoot/project từ receipt. Đọc SKILL.md đã cài và chạy `node <skillRoot>/freeup-social-content/runtime/cli.cjs doctor`. Thử lưu một ý tưởng/bài và đọc lại đúng nội dung. 9BizClaw/OpenClaw cần inventory eligible; Codex/Claude Code có thể cần lượt/chat mới để refresh skill.
-4. Chỉ khi cần ảnh/video, chạy `node <skillRoot>/freeup-social-content/runtime/setup.cjs` để cài Playwright/Chromium và FFmpeg bằng lockfile, sau đó chạy doctor lại. Viết bài và lấy lại bài không cần engine media.
-5. Hướng dẫn khách nêu chủ đề, chỉnh sửa trong chat và tải thành phẩm để tự đăng. Xem cách dùng trong README.
-
-Cài lại giữ `freeup-social-content-data`, sao lưu phần skill trước đó dưới `.freeup-backups`. Bản 1.1 dọn các tệp tích hợp cũ của chính FreeUp; không gỡ kết nối Google/Facebook dùng chung của host. Dữ liệu 1.0 được lưu bản gốc trong `Dữ liệu vận hành/archive-v1` rồi chuyển sang chế độ lưu nội dung local.
+Khôi phục Windows: nếu native gặp EPERM khi đổi tên và thư mục có receipt host/workspace/project cùng package.name đúng FreeUp, bộ cài có thể sửa lại tệp package của chính gói sau backup, rồi xác nhận inventory. Với thư mục không xác định sở hữu hoặc lỗi chính sách, dừng và báo lỗi. Không bỏ qua kiểm tra eligible/modelVisible.

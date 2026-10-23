@@ -1,45 +1,28 @@
-# FreeUp Content Agent
+# FreeUp Content Agent — quà tặng 9BizClaw
 
-**Nêu chủ đề trong 9BizClaw → nhận bài và ảnh/video trong chat → sửa theo ý muốn → tải thành phẩm để tự đăng.**
+Bộ trợ lý cho học viên mua 9BizClaw: từ chủ đề đến bài, ảnh và video, lưu tại máy để tải về tự đăng. Không cần Google Sheets hoặc quyền đăng Facebook.
 
-Bản thử nghiệm **1.1.0-beta.1** tập trung vào sản xuất nội dung trên máy. Đã bỏ Google Sheets, duyệt đăng, lịch tự động và chức năng xuất bản Facebook.
+Gửi link GitHub này cho agent trong 9BizClaw và nói: **“Cài bộ quà tặng FreeUp cho tôi.”** Agent đọc INSTALL.md, cài skill chính cùng tám chuyên môn và tài nguyên FreeUp. Cần Node 22+ (9BizClaw có sẵn), mạng lúc tải gói và engine media. Không tự thay model/persona của khách.
 
-## Khách cài như thế nào?
+Lần đầu agent kiểm tra thông tin đang có, trình xác nhận và chỉ hỏi phần còn thiếu. Đủ hồ sơ và được khách xác nhận, agent gửi ảnh ngang có logo FreeUp, Foxy và menu số:
 
-Đây là quà tặng cho học viên đã mua **9BizClaw**. Gửi link này trong chat 9BizClaw:
+![Hướng dẫn FreeUp](assets/guide/freeup-huong-dan-ngang.png)
 
-> https://github.com/phuongnguyendhtm/freeup-social-content-agent
->
-> Cài FreeUp Content Agent vào 9BizClaw của tôi, kiểm tra hoạt động rồi hướng dẫn tôi tạo bài đầu tiên.
+| Số | Chức năng | Ví dụ |
+|---|---|---|
+| 1 | Nghiên cứu | Tìm ý tưởng về giao việc |
+| 2 | Viết bài | Viết bài về giao quyền cho đội ngũ |
+| 3 | Ảnh đơn | Tạo ảnh cho bài này |
+| 4 | Carousel | Tạo carousel 5 trang |
+| 5 | Infographic | Tóm tắt bài thành infographic |
+| 6 | Chuỗi bình luận | Tạo chuỗi 7 bình luận |
+| 7 | B-roll | Làm video nền chữ cho bài này |
+| 8 | Reels | Tạo Reels 60 giây, nhiều cảnh |
 
-Agent đọc [INSTALL.md](INSTALL.md), xác định workspace/agent trong 9BizClaw và cài skill. Cần quyền đọc GitHub, chạy lệnh và ghi file trên máy. Dùng AI đang có của 9BizClaw; viết bài không cần tài khoản Google/Facebook. Engine ảnh/video được cài riêng khi cần.
+Có thể trả lời số hoặc nói tự nhiên. Nếu chọn số mà chưa có chủ đề, agent hỏi chủ đề. Sửa trực tiếp: “Rút gọn”, “Đổi giọng thân thiện”, “Sửa trang 3”. Lấy lại: “Gửi lại bài vừa tạo”. Tải caption và thành phẩm rồi tự đăng bằng tài khoản của mình.
 
-## Khách dùng hằng ngày
+**Tài nguyên đầu vào** chứa ảnh/video/nhạc và thương hiệu khách; **Nội dung đã tạo** chứa thành phẩm; **Dữ liệu vận hành** chứa hồ sơ và phiên bản. Mẫu FreeUp lấy từ repo quà tặng này, có checksum và giữ file khách đã sửa khi cập nhật. Ảnh hướng dẫn dùng nhận diện FreeUp; sản phẩm cho khách dùng thương hiệu khách.
 
-1. **Nêu nhu cầu:** “Tôi bán mỹ phẩm cho phụ nữ 30–45 tuổi. Gợi ý 5 chủ đề chăm sóc da.”
-2. **Tạo bài:** “Viết chủ đề số 2 thành bài Facebook khoảng 250 chữ, giọng gần gũi.”
-3. **Tạo hình:** “Tạo một ảnh minh họa đi kèm bài này.” Hoặc: “Chuyển bài thành carousel 5 trang.”
-4. **Chỉnh sửa:** “Rút ngắn mở bài, bỏ từ chuyên môn và đổi lời kêu gọi cuối bài.”
-5. **Lấy thành phẩm:** “Gửi lại bài và các file ảnh để tôi tải về đăng.”
+Giữ tám chuyên môn và tiêu chuẩn sản xuất từ FreeUp-Content-Agent commit 65ebff0. Xem DOI-CHIEU-REPO-GOC.md để biết phạm vi chuyển đổi. Reels có tám layout Remotion nguồn; giọng đọc cần audio thật hoặc TTS có sẵn được cấp quyền. Bản beta cần xem thành phẩm trước khi tự đăng.
 
-Agent trả nội dung trực tiếp trong chat, gửi media bằng khả năng đính kèm của host và lưu bản đã tạo trên máy. Nếu kênh chat chưa gửi được file, agent báo rõ và đưa vị trí mở file trên máy; không coi đường dẫn Windows là link tải trên điện thoại. Khách tự sao chép caption và đăng file bằng tài khoản của mình.
-
-Các lệnh khác: “Cho tôi xem các bài đã lưu”, “Lấy lại bài về chăm sóc da”, “Tạo infographic từ bài này”, “Tạo video nền chữ có nhạc 8 giây”, “Cập nhật tài nguyên mẫu FreeUp”.
-
-## Tệp của khách
-
-- **Tài nguyên đầu vào**: mẫu FreeUp và thư mục **Thương hiệu của tôi** để đặt logo, ảnh, video, chất liệu riêng.
-- **Nội dung đã tạo**: caption `.txt`, bài `.md` và ảnh/video theo ngày, kênh, mã bài, định dạng.
-- **Dữ liệu vận hành**: danh mục bài và phiên bản để lấy lại/chỉnh sửa; agent tự quản lý.
-
-Mỗi lần sửa giữ cùng mã bài và tăng phiên bản. Khi nâng cấp từ 1.0, nội dung được giữ lại; trạng thái duyệt, đăng và việc chờ đồng bộ của luồng cũ được loại khỏi dữ liệu đang dùng, bản gốc nằm trong `Dữ liệu vận hành/archive-v1`.
-
-## Media và phạm vi
-
-Ảnh, carousel, infographic, video nền chữ/chuyển động có nhạc được kết xuất local. Bộ mẫu gồm 7 file tạo riêng cho FreeUp, cập nhật từ chính GitHub FreeUp và kiểm tra SHA-256; giữ file khách đã tự sửa. Video người thật/giọng AI cần nguồn và công cụ tương ứng của host. [Danh mục mẫu](assets/manifest.json).
-
-[Bằng chứng kiểm tra](KIEM-THU.md). Bộ cài có bốn adapter; thử bằng fixture không đồng nghĩa đã nghiệm thu bốn phiên agent thật.
-
-**Đối chiếu nguồn:** [Báo cáo kiểm tra repo FreeUp-Content-Agent](DOI-CHIEU-REPO-GOC.md). Bản 1.1 mới có renderer mẫu cơ bản, chưa chuyển đầy đủ các bố cục và tiêu chuẩn chuyên biệt của repo nguồn.
-
-Mã và media trong repo được tạo riêng cho FreeUp theo quy trình tham khảo từ [FreeUp-Content-Agent](https://github.com/phuongnguyendhtm/FreeUp-Content-Agent) và [100X-Social-Content-Agent](https://github.com/tauhb/100X-Social-Content-Agent).
+Kiểm tra: npm test và npm run verify:release. Chi tiết cài: INSTALL.md. Phiên bản: **2.0.0-beta.1**.

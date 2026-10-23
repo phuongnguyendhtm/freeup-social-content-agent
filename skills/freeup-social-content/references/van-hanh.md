@@ -1,17 +1,15 @@
 # Vận hành local
 
-Đọc project trong runtime.json. Cú pháp chung: `node <skill>/runtime/cli.cjs <lệnh> --project <project>`; runtime tự lấy project khi chạy từ skill đã cài. Input là file JSON UTF-8, không ghép caption vào lệnh shell.
+runtime.json được bộ cài ghi theo agent/workspace thật. Chạy node <engineSkill>/runtime/cli.cjs <command> --project <project>. Tham số đường dẫn dùng argument array hoặc quote shell đúng; không ghép caption thành lệnh shell. Ghi input JSON bằng công cụ file trước khi gọi CLI.
 
-Các lệnh: `doctor`, `init`, `save --input file.json`, `list`, `get --key "id|format|channel"`, `render --input brief.json`, `assets-sync`, `assets-update`.
+- doctor: engine khả dụng; init: thư mục; profile-status/profile-discover/profile-merge/profile-confirm/guide/choose: kích hoạt và menu.
+- save --input file.json: {id,format,channel,topic,caption,masterContent,media,expectedRevision}. format: idea/text/image/carousel/infographic/comment_chain/broll/reels. id ASCII chữ/số/gạch. media là file trong project. Cập nhật bản có sẵn cần expectedRevision.
+- list; get --key id|format|channel: dùng nguyên key, quote dấu |.
+- render --input brief.json: tạo PNG/MP4, chưa ghi bài; kiểm file rồi save kèm media. Dùng cùng id khi chuyển định dạng. Không đổi bài gốc thành tóm tắt ngoài yêu cầu.
+- assets-sync: tài nguyên đi kèm; assets-update --version v2.0.0-beta.1: cập nhật từ GitHub FreeUp có checksum, giữ tài nguyên khách đã sửa.
 
-Ví dụ lưu bài:
+Tài nguyên đầu vào: Ảnh cá nhân, Ảnh danh nhân, Ảnh minh họa, Ảnh mẫu, Video nền, Video mẫu, Nhạc nền, Thương hiệu của tôi. Kết quả: Nội dung đã tạo/ngày/kênh/mã bài/định dạng; master_content.md ở thư mục mã bài, caption.txt/noi-dung.md ở định dạng. Dữ liệu vận hành chứa trạng thái/phiên bản/hồ sơ.
 
-```json
-{"id":"bai-001","format":"text","channel":"Facebook","topic":"Ủy quyền","caption":"Nội dung đầy đủ của bài"}
-```
+Khởi tạo media bằng node <engineSkill>/runtime/setup.cjs khi cần. Không cài lại nếu doctor xác nhận đủ. Không chạy scripts/.. được ghi trong tài liệu nguồn; các lệnh đó đã thay bằng CLI hiện tại. Không đụng kết nối chung của host. Bản nâng cấp giữ dữ liệu khách và backup phần skill cũ.
 
-Format: idea, text, image, carousel, infographic, video. Channel chỉ là tên kênh viết nội dung, mặc định Facebook (ideas cho ý tưởng); không phải Page ID hay tài khoản đăng. Mã bài dùng chữ không dấu/số/gạch ngang/gạch dưới. Cùng mã có nhiều định dạng độc lập.
-
-`save` trả captionFile/documentFile và revision. Caption .txt giữ nguyên nội dung, file .md có thông tin bài và đường dẫn media. Khi sửa, dùng nguyên id/format/channel và `expectedRevision` vừa đọc; REVISION_CONFLICT thì đọc lại, không ghi đè. Media phải là file có thật trong project.
-
-Trả caption đã lưu ngay trong chat, đính kèm thành phẩm hoặc đưa vị trí mở file phù hợp khả năng host. `list`/`get` để lấy lại bài. Nội dung đã tạo nằm theo ngày/kênh/mã/định dạng; Dữ liệu vận hành do runtime quản lý.
+Mỗi lần render tạo thư mục Bản dựng riêng, không ghi đè media bản đang lưu. Sau render và QA, save mới gắn bộ file đó vào revision mới; conflict không làm đổi media cũ. Giữ các file chưa lưu khi lỗi để kiểm tra, không tự xóa dữ liệu khách.
