@@ -1,0 +1,10 @@
+node_modules/
+.env
+*.log
+.superpowers/
+verification/
+dist/
+FreeUp Content Agent/
+*.sqlite*
+browser_data/
+

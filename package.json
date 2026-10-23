@@ -1,0 +1,15 @@
+{
+  "name": "freeup-social-content-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FreeUp Content Agent: chat, sản xuất nội dung và Google Sheets theo mẫu cố định",
+  "engines": {"node": ">=22"},
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "doctor": "node runtime/cli.cjs doctor",
+    "install:agent": "node install.cjs --host auto",
+    "verify:release": "node scripts/verify-release.cjs"
+  },
+  "optionalDependencies": {"playwright": "1.58.2", "ffmpeg-static": "5.3.0"}
+}
