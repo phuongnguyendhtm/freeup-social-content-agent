@@ -1,20 +1,20 @@
-# Sản xuất media local
+# Sản xuất media
 
-Mẫu mặc định được tạo riêng cho FreeUp, trong **Tài nguyên đầu vào**. Không tải ảnh/video/nhạc tác giả. Khách có thể thêm nguồn riêng. Chọn đúng nội dung đã viết; không nhét nguyên bài dài vào ảnh.
-
-Cập nhật mẫu: chạy `assets-update --version v1.0.0-beta.1` trong giai đoạn thử nghiệm. Lệnh chỉ lấy manifest/file có checksum từ GitHub FreeUp và giữ file khách đã sửa. Sau khi có release ổn định mới dùng `assets-update` không chỉ định phiên bản. Không dùng nhánh đang phát triển thay cho bản phát hành.
-
-Ghi brief JSON (dữ liệu, không phải shell):
+Dùng nội dung đã viết và tài nguyên FreeUp trong **Tài nguyên đầu vào**, hoặc chất liệu khách cung cấp. Chọn ý chính vừa với hình; không nhét cả bài dài vào ảnh.
 
 ```json
-{"id":"bai-001","format":"image","channel":"123456789","brand":"Tên thương hiệu khách","title":"Thêm công cụ, vẫn tắc ở người chủ.","body":"Điểm nghẽn nằm ở cách ra quyết định.","points":["Việc nào được tự quyết?","Trong giới hạn nào?"],"footer":"Tên thương hiệu · lời kết ngắn"}
+{"id":"bai-001","format":"image","channel":"Facebook","brand":"Thương hiệu khách","title":"Rõ quyền. Rõ việc.","body":"Đội ngũ tự chủ khi biết giới hạn quyết định.","points":["Chốt kết quả cần đạt.","Thống nhất lúc cần báo lại."],"footer":"Thương hiệu khách"}
 ```
 
-- Ảnh: `format:image`, 1080×1350.
-- Carousel: `format:carousel`, thêm `slides:[{title,body,points},...]`, 2–20 slide theo yêu cầu, mỗi slide 1080×1350.
-- Infographic: `format:infographic`, 1080×1920; chia ý ngắn, có thứ tự.
-- Video nền chữ: `format:video`, 1080×1920, `duration:8`, `music:"Tài nguyên đầu vào/Nhạc nền/freeup-focus.wav"`. Engine cơ bản tạo video chữ/chuyển động từ brief và nhạc, không tự giả có B-roll người thật/giọng AI. Khách yêu cầu video người nói hoặc B-roll thực tế thì cần footage/ảnh và công cụ media được host hỗ trợ; kiểm tra khả năng rồi mới cam kết.
+Chạy `render --input brief.json`:
 
-Chạy `render --input brief.json`. Nếu lỗi TEXT_OVERFLOW, rút ngắn chữ hoặc tách slide; không bỏ qua. Lưu danh sách media thật vào Ticket bằng save và expectedRevision vừa đọc. Trả ảnh/video trong chat. Muốn xem từ Sheet/điện thoại, upload đúng thành phẩm vào Drive khách qua native connected apps và kiểm tra link chia sẻ trước khi ghi ghi chú D.
+- image: 1080×1350.
+- carousel: thêm `slides:[{title,body,points},...]`, 2–20 trang 1080×1350.
+- infographic: 1080×1920, chia ý ngắn.
+- video: 1080×1920, `duration:8`, `music:"Tài nguyên đầu vào/Nhạc nền/freeup-focus.wav"`; video nền chữ/chuyển động có nhạc. Video người thật/giọng AI cần nguồn và công cụ tương ứng; kiểm tra khả năng host trước khi cam kết.
 
-Logo/ảnh khách có thể dùng công cụ media native của host để tạo bản riêng khi yêu cầu; không tự thay mặt người thật bằng hình mẫu. Runtime không sinh giọng nói/B-roll có sẵn nếu chưa có nguồn.
+Nếu TEXT_OVERFLOW, rút gọn hoặc tách trang. Render trả danh sách file thật; lưu chúng bằng save vào đúng id/format/channel, dùng expectedRevision nếu đã có. Khi sửa bài cũ, truyền createdAt của bản đã lưu vào brief để giữ thư mục cùng ngày.
+
+Đính kèm ảnh/video trong câu trả lời bằng khả năng host. Nếu bị giới hạn gửi file, báo rõ và cho khách vị trí mở file trên máy; không tìm đường vượt quyền. Khách lấy caption.txt và thành phẩm để tự đăng.
+
+Cập nhật mẫu qua `assets-update` (mặc định tag đúng phiên bản đã cài), hoặc `assets-update --version v1.1.0-beta.1`. Chỉ tải GitHub FreeUp và kiểm SHA-256, giữ file khách đã sửa. Không cần kết nối Google/Facebook.

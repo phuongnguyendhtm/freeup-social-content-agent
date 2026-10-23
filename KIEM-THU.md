@@ -1,36 +1,24 @@
-# Trạng thái nghiệm thu
+# Kiểm tra bản 1.1
+
+Phạm vi hiện tại: tạo nội dung/media trong chat, lưu local, khách tự đăng. Google Sheets, duyệt đăng, lịch và xuất bản Facebook đã được gỡ khỏi gói; các bằng chứng đồng bộ/đăng của bản 1.0 không còn là tiêu chí bản này.
 
 ## Đã kiểm tra
 
-- Bộ kiểm tra tự động trên Windows/Node.js 24: phiên bản, xung đột chat/Sheet, duyệt, hash media, chặn đăng lặp, lịch, tài nguyên và bộ cài bốn loại host trên workspace thử nghiệm. Số lượng và kết quả cuối cùng được ghi ở phần bằng chứng phát hành.
-- Kết xuất thật: ảnh 1080×1350, carousel 3 trang, infographic 1080×1920, video dọc 8 giây có nhạc. 7 file mẫu mới của FreeUp; checksum trong manifest.
-- Sao chép workbook nguồn thành mẫu FreeUp có ID khác, xóa dữ liệu ví dụ và giữ header/dropdown. Đã đọc lại qua Google Sheets API.
-- Kiểm tra cấu trúc gói phát hành và không nhúng đường dẫn người tạo trong runtime/skill.
-- Cài native vào 9BizClaw/OpenClaw 2026.9.9 trên máy triển khai, inventory xác nhận skill eligible. Cài Playwright/FFmpeg vào thư mục skill độc lập thành công.
-- Một lượt agent 9BizClaw local mới đã đọc skill/reference, chạy doctor, lưu Ticket và trả đúng caption đã lưu. Lượt này không gửi tin ra Telegram/Zalo hoặc đăng Facebook.
-- Lượt thử native Sheet riêng trong 9BizClaw CLI đã gọi Composio để kiểm tra connection nhưng bị `no_identity` tại `plugin-before-tool-call`. Đã dừng đúng tại lớp quyền; không xác thực mới hoặc mượn danh tính. Project native vẫn `boundSheet:false`, `pendingSync:1`. Cần thử lại từ chat có danh tính chủ tài khoản; lỗi CLI này chưa chứng minh tình trạng quyền của chat thật.
-- Ghi 2 hàng ý tưởng/thành phẩm từ chính caption của lượt 9BizClaw đó vào bản sao Sheet nghiệm thu qua Google Drive connector của phiên triển khai; đọc lại khớp caption, khóa/revision/generation và dropdown, hàng đợi đồng bộ về 0. Đây chưa phải kiểm tra native Composio Google Sheets trong phiên 9BizClaw.
-- Rà soát độc lập phát hiện 8 lỗi Important; đã viết kiểm tra tái hiện và sửa: duyệt chat bị dữ liệu Sheet cũ hủy, ack cùng revision, xóa lịch, mất preview note, mất metadata ý tưởng, media bị đổi sau prepare, trả caption cũ sau sync và khóa mồ côi.
+- 20/20 bài kiểm tra tự động đạt: lưu file tiếng Việt, chỉnh sửa/phiên bản, nâng dữ liệu 1.0, loại lệnh tích hợp cũ, cài lại giữ dữ liệu, đường dẫn, tài nguyên và renderer.
+- Bản sao gói sạch: npm ci với omit optional, 20/20 test và verify:release đạt; checksum đủ 7 media, không còn mẫu XLSX/adapter Sheet/scheduler.
+- Công cụ quick_validate của skill-creator xác nhận hợp lệ cả skill vận hành và entrypoint cài đặt.
+- 9BizClaw hiện có: đã cập nhật tệp của chính skill đăng ký sẵn, inventory xác nhận eligible/modelVisible, doctor xác nhận local-content và hai engine sẵn sàng; nội dung cũ vẫn được giữ.
+- Ghi nhận môi trường: CLI native --force rollback vì EPERM khi đổi tên backup trên Windows. Đã sao lưu rồi cập nhật tệp của skill có sẵn, không thay quyền/config/skill khác. Đây không phải bằng chứng bộ cài nâng cấp native đã thành công trên mọi máy.
 
-## Bản mẫu phân phối
+## Đang xác minh
 
-Cloud template mới hiện chỉ có quyền owner. Gói kèm file XLSX export trực tiếp từ mẫu sạch, đã kiểm tra đúng 2 tab/header/dropdown và không có dữ liệu ví dụ. Agent import file cố định này vào Drive khách nếu chưa có quyền bản cloud; không tự thiết kế lại Sheet.
+- Một lượt agent 9BizClaw tạo bài và ảnh thật bằng engine local, đọc lại đúng file; không đăng hoặc kết nối dịch vụ ngoài.
+- Gói tải lại từ GitHub và GitHub Actions cho phiên bản 1.1 trên Windows, macOS, Linux.
 
-## Chưa xác nhận
+## Giới hạn
 
-- Đăng bài thật lên fanpage và chạy lịch nền tới thời điểm đăng; không tự đăng bài thử vào Page của khách.
-- Một phiên agent thật mới trên cả bốn host; kiểm tra bộ cài bằng fixture không thay thế kiểm tra này.
-- Đồng bộ Google Sheets trực tiếp qua native Composio của 9BizClaw bằng tài khoản khách; hiện bằng chứng live Sheet dùng connector của phiên triển khai.
-- Video B-roll người thật/giọng AI; engine local hiện có video nền chữ/chuyển động và nhạc.
+- Bộ cài có adapter bốn host; chưa xác nhận phiên agent thật từ URL trên đủ cả bốn. Agent cần mạng và quyền chạy local.
+- Video engine là nền chữ/chuyển động có nhạc; chưa gồm footage người thật hoặc giọng AI.
+- Khả năng đính kèm file phụ thuộc host/kênh chat. Đường dẫn máy tính không phải link tải từ điện thoại.
 
-Không quảng cáo toàn bộ quy trình tự đăng đã nghiệm thu khi các phần trên chưa có bằng chứng.
-
-## Bằng chứng phát hành thử nghiệm
-
-- Ngày 23/10/2026: 35/35 kiểm tra tự động đạt trên bản sao gói sạch; `verify:release` đạt, xác minh checksum 8 file phân phối.
-- Mẫu XLSX: đúng hai tab, header và danh sách dropdown; không còn hàng dữ liệu ví dụ.
-- Đã import chính file XLSX đóng gói thành Google Sheets thật, đọc lại header/dropdown và chạy `validateTemplate` đạt. Bản cloud mới giữ đúng mẫu, không được dựng lại bằng suy đoán.
-- Đã clone bản tag `v1.0.0-beta.1` từ GitHub vào thư mục sạch: `npm ci --ignore-scripts --omit=optional`, 35/35 test và `verify:release` đều đạt. Tải tài nguyên bằng `assets-update --version v1.0.0-beta.1` thêm đủ 8 file và xác minh checksum.
-- [GitHub Actions của commit 07b551c](https://github.com/phuongnguyendhtm/freeup-social-content-agent/actions/runs/39886472457) đạt cả Windows, macOS và Ubuntu, Node.js 22.
-- Đã mở một phiên Codex CLI mới chỉ nhận URL và workspace trống. Phiên này dừng đúng khi sandbox chặn kết nối github.com:443, trước bước cài; không dùng bản local để giả kiểm tra URL thành công. Tiêu chí URL trong phiên Codex có quyền tải mạng vẫn cần nghiệm thu.
-- Đã sửa 8 lỗi từ rà soát độc lập, mỗi lỗi có kiểm tra tái hiện trước khi sửa. Kiểm tra bản sao gói sạch phát hiện thêm phụ thuộc thư mục test cũ và đã sửa.
+Nâng cấp lưu bản dữ liệu cũ trong archive-v1. Kết nối dùng chung và Sheet đã có trong tài khoản của khách được giữ nguyên; FreeUp không gọi chúng.

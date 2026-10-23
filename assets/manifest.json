@@ -1,8 +1,8 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0-beta.1",
   "owner": "phuongnguyendhtm",
   "repository": "freeup-social-content-agent",
-  "origin": "Created specifically for FreeUp; no author media copied; Sheet is a cleaned export of the user-supplied workbook",
+  "origin": "Created specifically for FreeUp; no author media copied.",
   "license": "FreeUp gift recipients may use and adapt these original sample assets for their content.",
   "assets": [
     {
@@ -53,13 +53,6 @@
       "kind": "video",
       "sha256": "9be5e4cb2e7bbdbb0cf6b83a5e6dc2a5395a61f75ff3c2479c6742f313aece12",
       "bytes": 111115
-    },
-    {
-      "file": "templates/FreeUp-Content-Dashboard.xlsx",
-      "destination": "Mẫu Sheet/FreeUp-Content-Dashboard.xlsx",
-      "kind": "template",
-      "sha256": "5c5a41060595c7938a140e04a5d0197751b80780d3fdfddafe28eaa7ef09b690",
-      "bytes": 20765
     }
   ]
 }

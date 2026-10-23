@@ -1,2 +1,0 @@
-const test=require('node:test'),assert=require('node:assert/strict'),{schedulePlan}=require('../runtime/scheduler.cjs');
-test('scheduler plan requires owner choice and never claims a task was created',()=>{assert.throws(()=>schedulePlan('project',{}),/OWNER_SCHEDULE_APPROVAL_REQUIRED/);const p=schedulePlan('project',{approved:true,intervalMinutes:5});assert.equal(p.kind,'host-native-owner-task');assert.match(p.instructions,/does not create/);assert.match(p.prompt,/uncertain/);});

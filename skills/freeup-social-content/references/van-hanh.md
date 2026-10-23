@@ -1,19 +1,17 @@
-# Lệnh vận hành
+# Vận hành local
 
-Đọc `runtime.json` để lấy project. Quy ước bên dưới: `<cli>` là đường dẫn tuyệt đối tới `runtime/cli.cjs` của skill đã cài. Dữ liệu dài ghi JSON UTF-8 bằng file tool, không nối caption vào câu lệnh shell.
+Đọc project trong runtime.json. Cú pháp chung: `node <skill>/runtime/cli.cjs <lệnh> --project <project>`; runtime tự lấy project khi chạy từ skill đã cài. Input là file JSON UTF-8, không ghép caption vào lệnh shell.
 
-```text
-node <cli> init --project <project>
-node <cli> save --project <project> --input <ticket.json>
-node <cli> get --project <project> --key <id|format|channel>
-node <cli> list --project <project>
-node <cli> render --project <project> --input <brief.json>
-node <cli> approve --project <project> --key <key> --type produce --revision 1
-node <cli> approve --project <project> --key <key> --type publish --revision 2
+Các lệnh: `doctor`, `init`, `save --input file.json`, `list`, `get --key "id|format|channel"`, `render --input brief.json`, `assets-sync`, `assets-update`.
+
+Ví dụ lưu bài:
+
+```json
+{"id":"bai-001","format":"text","channel":"Facebook","topic":"Ủy quyền","caption":"Nội dung đầy đủ của bài"}
 ```
 
-Ticket mới: `{ "id":"bai-001", "format":"image", "channel":"<Page ID thật>", "topic":"...", "caption":"nguyên bài viết", "media":[] }`. Format: `idea`, `image`, `carousel`, `infographic`, `video`. Ý tưởng dùng `channel:"ideas"`. Sửa ticket thêm `expectedRevision` đúng giá trị vừa đọc. Media là đường dẫn tệp thực tế trong project; nhiều ảnh dùng danh sách có thứ tự. `postTime` nếu có phải là ISO 8601 kèm múi giờ, ví dụ `2026-11-01T09:00:00+07:00`.
+Format: idea, text, image, carousel, infographic, video. Channel chỉ là tên kênh viết nội dung, mặc định Facebook (ideas cho ý tưởng); không phải Page ID hay tài khoản đăng. Mã bài dùng chữ không dấu/số/gạch ngang/gạch dưới. Cùng mã có nhiều định dạng độc lập.
 
-Khách yêu cầu viết bài là đủ để soạn và trả bài, không bắt duyệt ý tưởng riêng nếu đã yêu cầu sản xuất trực tiếp. Đăng luôn cần bản xem trước và phê duyệt đúng phiên bản. ID do runtime dùng để giữ cùng việc; không bắt khách nhớ ID.
+`save` trả captionFile/documentFile và revision. Caption .txt giữ nguyên nội dung, file .md có thông tin bài và đường dẫn media. Khi sửa, dùng nguyên id/format/channel và `expectedRevision` vừa đọc; REVISION_CONFLICT thì đọc lại, không ghi đè. Media phải là file có thật trong project.
 
-Sau save/render: trả nội dung trong chat bằng chính dữ liệu đã lưu, rồi đồng bộ Sheet cùng lượt theo `dong-bo-sheet.md`. Nếu Sheet lỗi, báo kết quả vẫn đã lưu local và chờ đồng bộ. Không sản xuất lại để thử ghi Sheet. Lỗi `BUSY_RETRY_LATER`: lượt khác đang giữ khóa; thử lại sau, không xóa khóa đang dùng. Nếu máy tắt giữa ghi, giữ dữ liệu để kiểm tra; không tự reset.
+Trả caption đã lưu ngay trong chat, đính kèm thành phẩm hoặc đưa vị trí mở file phù hợp khả năng host. `list`/`get` để lấy lại bài. Nội dung đã tạo nằm theo ngày/kênh/mã/định dạng; Dữ liệu vận hành do runtime quản lý.

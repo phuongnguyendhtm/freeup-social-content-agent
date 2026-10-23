@@ -2,6 +2,8 @@
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),cp=require('node:child_process');
 const core=require('./runtime/core.cjs');
 const NAME='freeup-social-content',HOSTS=['openclaw','9bizclaw','claude','codex'];
+const VERSION=require('./package.json').version;
+const RETIRED=['references-schema.cjs','runtime/sheets.cjs','runtime/scheduler.cjs','references/sheet-mau.md','references/sheet-schema.json','references/dong-bo-sheet.md','references/dang-bai.md','assets/templates/FreeUp-Content-Dashboard.xlsx'];
 function detectHost({currentHost,candidates=[]}={}){if(currentHost&&HOSTS.includes(currentHost))return currentHost;if(candidates.length===1&&HOSTS.includes(candidates[0]))return candidates[0];throw Error('HOST_CHOICE_REQUIRED: '+HOSTS.join(', '));}
 function agentEntry(cfg,id){const a=cfg.agents||{};if(a.entries?.[id])return {entry:a.entries[id],configPath:`agents.entries.${id}.skills`};const i=a.list?.findIndex(v=>v.id===id);if(i>=0)return {entry:a.list[i],configPath:`agents.list[${i}].skills`};if(id==='main'&&a.defaults&&!a.entries&&!a.list)return {entry:a.defaults,configPath:'agents.defaults.skills'};throw Error('AGENT_NOT_FOUND');}
 function mergeAllowlist(cfg,id){const c=structuredClone(cfg),selected=agentEntry(c,id);for(const o of [c.agents.defaults||{},selected.entry])if(Object.hasOwn(o,'skills')){if(!Array.isArray(o.skills)||o.skills.some(s=>typeof s!=='string'))throw Error('INVALID_ALLOWLIST');if(!o.skills.includes(NAME))o.skills.push(NAME);}return c;}
@@ -13,10 +15,10 @@ function install({host,workspace,packageRoot=__dirname,native:useNative=true,roo
  const runNative=args=>native(root,args,{stateDir,cli,node});
  if(['9bizclaw','openclaw'].includes(host)&&useNative){if(!configFile)throw Error('NATIVE_ROOT_REQUIRED');cfg=JSON.parse(fs.readFileSync(configFile,'utf8').replace(/^\uFEFF/,''));selected=agentEntry(cfg,agent);workspace=selected.entry.workspace||cfg.agents.defaults?.workspace;if(!workspace)throw Error('WORKSPACE_REQUIRED');}
  if(!workspace)throw Error('WORKSPACE_REQUIRED');workspace=path.resolve(workspace);core.safePath(workspace);const skillRoot=path.join(workspace,host==='claude'?'.claude/skills':host==='codex'?'.agents/skills':'skills'),target=core.safePath(workspace,path.relative(workspace,path.join(skillRoot,NAME))),project=core.safePath(workspace,'freeup-social-content-data');
- const receipt={host,agent,workspace,skillRoot,project,skill:NAME,version:'1.0.0',mode:useNative?'native':'fixture',verified:false};if(plan)return {...receipt,plan:true};
+ const receipt={host,agent,workspace,skillRoot,project,skill:NAME,version:VERSION,mode:useNative?'native':'fixture',verified:false};if(plan)return {...receipt,plan:true};
  const source=path.join(packageRoot,'skills',NAME);if(!fs.existsSync(path.join(source,'SKILL.md')))throw Error('PACKAGE_INCOMPLETE');fs.mkdirSync(workspace,{recursive:true});
- const stage=fs.mkdtempSync(path.join(os.tmpdir(),'freeup-stage-'));copyDir(source,stage);for(const dir of ['runtime','assets'])copyDir(path.join(packageRoot,dir),path.join(stage,dir));fs.writeFileSync(path.join(stage,'references-schema.cjs'),"module.exports=require('./references/sheet-schema.json');\n");fs.copyFileSync(path.join(packageRoot,'package.json'),path.join(stage,'package.json'));const lockfile=path.join(packageRoot,'package-lock.json');if(fs.existsSync(lockfile))fs.copyFileSync(lockfile,path.join(stage,'package-lock.json'));
- fs.writeFileSync(path.join(stage,'runtime.json'),JSON.stringify({project,workspace,host,agent,version:'1.0.0'}));
+ const stage=fs.mkdtempSync(path.join(os.tmpdir(),'freeup-stage-'));copyDir(source,stage);for(const dir of ['runtime','assets'])copyDir(path.join(packageRoot,dir),path.join(stage,dir));fs.copyFileSync(path.join(packageRoot,'package.json'),path.join(stage,'package.json'));const lockfile=path.join(packageRoot,'package-lock.json');if(fs.existsSync(lockfile))fs.copyFileSync(lockfile,path.join(stage,'package-lock.json'));
+ fs.writeFileSync(path.join(stage,'runtime.json'),JSON.stringify({project,workspace,host,agent,version:VERSION}));
  const backup=path.join(workspace,'.freeup-backups',Date.now()+'-'+NAME);if(fs.existsSync(target)){copyDir(target,backup);receipt.backup=backup;}
  if(['9bizclaw','openclaw'].includes(host)&&useNative){
    runNative(['skills','install',stage,'--agent',agent,'--as',NAME,...(receipt.backup?['--force']:[])]);
@@ -26,6 +28,7 @@ function install({host,workspace,packageRoot=__dirname,native:useNative=true,roo
    if(batch.length){const f=path.join(stage,'allowlist-batch.json');fs.writeFileSync(f,JSON.stringify(batch));runNative(['config','set','--batch-file',f,'--dry-run','--json']);runNative(['config','set','--batch-file',f,'--json']);}
    const inventory=JSON.parse(runNative(['skills','list','--agent',agent,'--json'])),found=inventory.skills?.find(s=>s.name===NAME);if(!found||!found.eligible||found.disabled||found.blockedByAgentFilter||found.blockedByAllowlist)throw Error('NATIVE_SKILL_NOT_READY');receipt.verified=true;
  }else{copyDir(stage,target);receipt.verified=fs.existsSync(path.join(target,'SKILL.md'));}
+ for(const file of RETIRED){const retired=core.safePath(target,file);if(fs.existsSync(retired))fs.unlinkSync(retired);}
  core.init(project);const {syncBundled}=require('./runtime/assets.cjs');syncBundled(packageRoot,project);core.atomic(path.join(project,'Dữ liệu vận hành/install-receipt.json'),receipt);return receipt;
 }
 function parse(argv){const o={};for(let i=0;i<argv.length;i++){const a=argv[i];if(a==='--plan'){o.plan=true;continue;}if(!['--host','--workspace','--root','--agent','--state-dir','--cli','--node'].includes(a)||!argv[i+1])throw Error('INVALID_INSTALL_ARGUMENT');o[a==='--state-dir'?'stateDir':a.slice(2)]=argv[++i];}return o;}

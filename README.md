@@ -1,42 +1,43 @@
 # FreeUp Content Agent
 
-**Bản thử nghiệm v1.0.0-beta.1.** Xem các phần đã và chưa nghiệm thu trong [KIEM-THU.md](KIEM-THU.md) trước khi phát cho khách dùng thật.
+**Nêu chủ đề trong 9BizClaw → nhận bài và ảnh/video trong chat → sửa theo ý muốn → tải thành phẩm để tự đăng.**
 
-Khách nêu chủ đề trong **9BizClaw/OpenClaw** → agent trả kết quả ngay trong chat → cập nhật cùng nội dung lên **Google Sheets mẫu FreeUp**. Viết bài, tạo ảnh/carousel/infographic/video, chỉnh sửa, duyệt và quản lý đăng fanpage.
+Bản thử nghiệm **1.1.0-beta.1** tập trung vào sản xuất nội dung trên máy. Đã bỏ Google Sheets, duyệt đăng, lịch tự động và chức năng xuất bản Facebook.
 
-## Cài bằng cách gửi link cho agent
+## Khách cài như thế nào?
 
-Gửi https://github.com/phuongnguyendhtm/freeup-social-content-agent kèm câu:
+Gửi link này cho agent trong 9BizClaw/OpenClaw, Codex hoặc Claude Code local:
 
-> Cài FreeUp Content Agent trên môi trường tôi đang dùng, xác minh skill hoạt động rồi thiết lập Sheet riêng từ mẫu trong references/sheet-mau.md. Giữ nguyên các skill và dữ liệu hiện có.
+> https://github.com/phuongnguyendhtm/freeup-social-content-agent
+>
+> Cài FreeUp Content Agent vào hệ thống tôi đang dùng, kiểm tra hoạt động rồi hướng dẫn tôi tạo bài đầu tiên.
 
-Agent đọc [INSTALL.md](INSTALL.md), nhận diện host và chạy bộ cài. Hỗ trợ bộ cài OpenClaw, 9BizClaw, Codex và Claude Code; cần agent có quyền đọc repo, ghi file và chạy lệnh trên máy. Claude web/Cowork không mặc nhiên dùng được bộ cài local này.
+Agent đọc [INSTALL.md](INSTALL.md), nhận diện môi trường và cài skill. Cần quyền đọc GitHub, chạy lệnh và ghi file trên máy. Dùng AI đang có của host; viết bài không cần tài khoản Google/Facebook. Engine ảnh/video được cài riêng khi cần. Claude web/Cowork cần cách nhập gói phù hợp với khả năng host, không dùng mặc định bộ cài local này.
 
-## Sử dụng
+## Khách dùng hằng ngày
 
-- “Đề xuất 5 ý tưởng về ủy quyền cho đội ngũ.”
-- “Viết bài từ ý tưởng thứ hai và tạo ảnh đi kèm.”
-- “Sửa đoạn mở đầu, giữ phần còn lại.”
-- “Duyệt đăng bản vừa xem lên fanpage đã chọn.”
+1. **Nêu nhu cầu:** “Tôi bán mỹ phẩm cho phụ nữ 30–45 tuổi. Gợi ý 5 chủ đề chăm sóc da.”
+2. **Tạo bài:** “Viết chủ đề số 2 thành bài Facebook khoảng 250 chữ, giọng gần gũi.”
+3. **Tạo hình:** “Tạo một ảnh minh họa đi kèm bài này.” Hoặc: “Chuyển bài thành carousel 5 trang.”
+4. **Chỉnh sửa:** “Rút ngắn mở bài, bỏ từ chuyên môn và đổi lời kêu gọi cuối bài.”
+5. **Lấy thành phẩm:** “Gửi lại bài và các file ảnh để tôi tải về đăng.”
 
-Trả kết quả trong chat, Sheet được cập nhật cùng bản. Duyệt làm và duyệt đăng tách riêng. Sửa nội dung sẽ hủy duyệt cũ. Mất mạng thì giữ việc chờ đồng bộ; chưa có readback không báo đã đăng/đã lưu.
+Agent trả nội dung trực tiếp trong chat, gửi media bằng khả năng đính kèm của host và lưu bản đã tạo trên máy. Nếu kênh chat chưa gửi được file, agent báo rõ và đưa vị trí mở file trên máy; không coi đường dẫn Windows là link tải trên điện thoại. Khách tự sao chép caption và đăng file bằng tài khoản của mình.
+
+Các lệnh khác: “Cho tôi xem các bài đã lưu”, “Lấy lại bài về chăm sóc da”, “Tạo infographic từ bài này”, “Tạo video nền chữ có nhạc 8 giây”, “Cập nhật tài nguyên mẫu FreeUp”.
 
 ## Tệp của khách
 
-- **Tài nguyên đầu vào**: ảnh mẫu, video mẫu, nhạc nền và thư mục thương hiệu của khách.
-- **Nội dung đã tạo**: thành phẩm theo ngày/kênh/mã bài.
-- **Dữ liệu vận hành**: phiên bản, hàng đợi, receipt xác minh; không đưa lên GitHub.
+- **Tài nguyên đầu vào**: mẫu FreeUp và thư mục **Thương hiệu của tôi** để đặt logo, ảnh, video, chất liệu riêng.
+- **Nội dung đã tạo**: caption `.txt`, bài `.md` và ảnh/video theo ngày, kênh, mã bài, định dạng.
+- **Dữ liệu vận hành**: danh mục bài và phiên bản để lấy lại/chỉnh sửa; agent tự quản lý.
 
-Tài nguyên mẫu trong gói được tạo mới cho FreeUp. Cập nhật từ GitHub FreeUp theo phiên bản, giữ file khách đã sửa. [Danh mục và nguồn gốc](assets/manifest.json).
+Mỗi lần sửa giữ cùng mã bài và tăng phiên bản. Khi nâng cấp từ 1.0, nội dung được giữ lại; trạng thái duyệt, đăng và việc chờ đồng bộ của luồng cũ được loại khỏi dữ liệu đang dùng, bản gốc nằm trong `Dữ liệu vận hành/archive-v1`.
 
-## Sheet chuẩn
+## Media và phạm vi
 
-[Mẫu FreeUp](https://docs.google.com/spreadsheets/d/1N2vWZTWNfrXVtVJXM2MUlFf5nQ0EHw3a1LS7cw7-IUc/edit) được sao chép từ mẫu người dùng cung cấp. Mỗi khách dùng bản sao riêng. Agent phải đọc [reference cố định](skills/freeup-social-content/references/sheet-mau.md). Nếu chưa có quyền bản cloud, dùng [bản XLSX cố định trong gói](assets/templates/FreeUp-Content-Dashboard.xlsx) để import vào Drive khách rồi xác minh header/dropdown; không tự tạo workbook tùy ý.
+Ảnh, carousel, infographic, video nền chữ/chuyển động có nhạc được kết xuất local. Bộ mẫu gồm 7 file tạo riêng cho FreeUp, cập nhật từ chính GitHub FreeUp và kiểm tra SHA-256; giữ file khách đã tự sửa. Video người thật/giọng AI cần nguồn và công cụ tương ứng của host. [Danh mục mẫu](assets/manifest.json).
 
-## Phạm vi bản đầu
+[Bằng chứng kiểm tra](KIEM-THU.md). Bộ cài có bốn adapter; thử bằng fixture không đồng nghĩa đã nghiệm thu bốn phiên agent thật.
 
-Đã có bộ máy quản lý phiên bản/duyệt/đối soát và engine ảnh, carousel, infographic, video nền chữ có nhạc. Video B-roll người thật, giọng AI và đăng fanpage phụ thuộc nguồn media/công cụ/kết nối thực tế của host; không cam kết chỉ cài skill là đã cấp quyền các dịch vụ này. Tác vụ theo dõi/hẹn đăng phải được tạo và xác minh qua scheduler native của chủ tài khoản; máy cần bật.
-
-Kết quả kiểm tra và môi trường đã thử được ghi trong [KIEM-THU.md](KIEM-THU.md).
-
-Mã triển khai và media mẫu trong repo được tạo riêng cho FreeUp theo quy trình tham khảo; không sao chép media của tác giả. Repo tham khảo: [FreeUp-Content-Agent](https://github.com/phuongnguyendhtm/FreeUp-Content-Agent), [100X-Social-Content-Agent](https://github.com/tauhb/100X-Social-Content-Agent).
+Mã và media trong repo được tạo riêng cho FreeUp theo quy trình tham khảo từ [FreeUp-Content-Agent](https://github.com/phuongnguyendhtm/FreeUp-Content-Agent) và [100X-Social-Content-Agent](https://github.com/tauhb/100X-Social-Content-Agent).

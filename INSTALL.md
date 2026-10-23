@@ -1,23 +1,22 @@
 # Cài FreeUp Content Agent
 
-Đọc trước: Node.js 22+, quyền chạy local và kết nối mạng để tải repo/engine. Nếu đang ở môi trường cloud không thể chạm máy khách, báo cần mở agent local; không báo đã cài vào máy khách.
+Cần Node.js 22+, quyền chạy local và mạng để tải gói. Agent cài vào máy đang làm việc; môi trường cloud không có quyền vào máy khách phải báo rõ giới hạn.
 
-1. Tải/clone repo này vào thư mục riêng. Nếu không có Git, dùng ZIP từ GitHub và giải nén; không cần tài khoản lập trình của người tạo.
-2. Xác định host của cuộc trò chuyện hiện tại. Dùng `--host auto` khi có tín hiệu host rõ; nhiều môi trường mơ hồ thì hỏi chọn một, không cài tất cả.
-3. Cài:
+1. Clone/tải ZIP repo này vào thư mục riêng. Xác định host của cuộc trò chuyện hiện tại; chỉ hỏi chọn khi có nhiều host mà không xác định được.
+2. Chạy bộ cài tương ứng:
 
 ```text
 node install.cjs --host auto --workspace <workspace của khách>
 node install.cjs --host codex --workspace <workspace của khách>
 node install.cjs --host claude --workspace <workspace của khách>
 node install.cjs --host 9bizclaw --root <thư mục cài 9BizClaw> --agent main
-node install.cjs --host openclaw --root <root có openclaw-state và vendor> --agent main
+node install.cjs --host openclaw --state-dir <state> --cli <openclaw.mjs> --agent main
 ```
 
-OpenClaw bố cục chuẩn khác bố cục vendor của 9BizClaw: dùng `--state-dir <state>` và `--cli <openclaw.mjs>` theo mục hỗ trợ CLI, không tự đoán vị trí. Bộ cài cần root runtime thật; không cố định ổ D hoặc tên Admin. 9BizClaw thử đọc install-root.json của app để tự tìm root. Có thể thêm `--plan` để xem đường dẫn trước khi cài. Native install bị từ chối thì dừng bước đó, không chuyển sang copy để vượt quyền.
+9BizClaw tự tìm root từ install-root.json nếu có. OpenClaw theo bố cục vendor có thể dùng `--root`. Thêm `--node` nếu CLI native cần Node riêng; `--plan` để xem đường dẫn. Native install bị từ chối thì dừng tại bước đó.
 
-4. Lấy skillRoot/project từ receipt, chạy `node <skillRoot>/freeup-social-content/runtime/setup.cjs` để cài engine và Chromium bằng lockfile. Chạy `node <skillRoot>/freeup-social-content/runtime/cli.cjs doctor --project <project>`.
-5. 9BizClaw/OpenClaw: kiểm tra native inventory xác nhận skill eligible. Codex/Claude Code: mở lượt/chat mới nếu host cần refresh rồi gọi skill bằng tên; phải thử nhận một yêu cầu thật trước khi nói đã nhận diện thành công.
-6. Đọc `references/thiet-lap.md` và `references/sheet-mau.md` của skill vừa cài; sao chép Sheet bằng kết nối khách hoặc import đúng bản mẫu XLSX đóng gói khi thiếu quyền cloud, kiểm tra cấu trúc và bind bản riêng. Chỉ tạo lịch/đăng bài khi chủ đã duyệt phạm vi tương ứng.
+3. Lấy skillRoot/project từ receipt. Đọc SKILL.md đã cài và chạy `node <skillRoot>/freeup-social-content/runtime/cli.cjs doctor`. Thử lưu một ý tưởng/bài và đọc lại đúng nội dung. 9BizClaw/OpenClaw cần inventory eligible; Codex/Claude Code có thể cần lượt/chat mới để refresh skill.
+4. Chỉ khi cần ảnh/video, chạy `node <skillRoot>/freeup-social-content/runtime/setup.cjs` để cài Playwright/Chromium và FFmpeg bằng lockfile, sau đó chạy doctor lại. Viết bài và lấy lại bài không cần engine media.
+5. Hướng dẫn khách nêu chủ đề, chỉnh sửa trong chat và tải thành phẩm để tự đăng. Xem cách dùng trong README.
 
-Mỗi lần cài lưu backup phần skill trước đó dưới `.freeup-backups` trong workspace. Dữ liệu trong `freeup-social-content-data` giữ nguyên. Muốn khôi phục: dừng tác vụ FreeUp, dùng cơ chế quản lý skill của host để cài lại bản backup, giữ dữ liệu và xác minh inventory. Không khôi phục toàn bộ config bằng bản cũ.
+Cài lại giữ `freeup-social-content-data`, sao lưu phần skill trước đó dưới `.freeup-backups`. Bản 1.1 dọn các tệp tích hợp cũ của chính FreeUp; không gỡ kết nối Google/Facebook dùng chung của host. Dữ liệu 1.0 được lưu bản gốc trong `Dữ liệu vận hành/archive-v1` rồi chuyển sang chế độ lưu nội dung local.
