@@ -22,6 +22,7 @@ async function main(argv){const o=args(argv),cmd=o.command;if(cmd==='template')r
  if(cmd==='sheet-verify'){const d=readInput(o);return sheets.verifyWrites(p,d.snapshot,d.expected);}
  if(cmd==='render')return {media:await require('./render.cjs').render(p,readInput(o))};
  if(cmd==='assets-sync')return require('./assets.cjs').syncBundled(path.join(__dirname,'..'),p);
+ if(cmd==='assets-update')return require('./assets.cjs').syncRemote(p,o.version);
  if(cmd==='scheduler-plan')return require('./scheduler.cjs').schedulePlan(p,readInput(o));
  throw Error('UNKNOWN_COMMAND');
 }

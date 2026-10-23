@@ -1,1 +1,58 @@
-{"version":"1.0.0","owner":"phuongnguyendhtm","repository":"freeup-social-content-agent","assets":[]}
+{
+  "version": "1.0.0",
+  "owner": "phuongnguyendhtm",
+  "repository": "freeup-social-content-agent",
+  "origin": "Created specifically for FreeUp; no author media copied",
+  "license": "FreeUp gift recipients may use and adapt these original sample assets for their content.",
+  "assets": [
+    {
+      "file": "originals/freeup-focus.wav",
+      "destination": "Nhạc nền/freeup-focus.wav",
+      "kind": "audio",
+      "sha256": "4c921a2146633a197cce4a74d9fd493b4ef4620567d1d69c589326b65d995dac",
+      "bytes": 352844
+    },
+    {
+      "file": "originals/freeup-mau-anh.png",
+      "destination": "Ảnh mẫu/freeup-mau-anh.png",
+      "kind": "image",
+      "sha256": "7d74e4f22bf90ff509a52def210bfb98320381d4933ba6e5a0c5b7d625258986",
+      "bytes": 60910
+    },
+    {
+      "file": "originals/freeup-mau-carousel-1.png",
+      "destination": "Ảnh mẫu/freeup-mau-carousel-1.png",
+      "kind": "carousel",
+      "sha256": "337970a50f2c9b65d614dce6076173b412e7a27f7aae56da4522656bb53ddba0",
+      "bytes": 53588
+    },
+    {
+      "file": "originals/freeup-mau-carousel-2.png",
+      "destination": "Ảnh mẫu/freeup-mau-carousel-2.png",
+      "kind": "carousel",
+      "sha256": "70e836086e2d7577f3927ea6206c539d49245bd9c33a8a0deca9b13512c7082a",
+      "bytes": 54125
+    },
+    {
+      "file": "originals/freeup-mau-carousel-3.png",
+      "destination": "Ảnh mẫu/freeup-mau-carousel-3.png",
+      "kind": "carousel",
+      "sha256": "6f9fab5f19e22c0668dcda775b34aeb9ddd96090045790fbd7e1c5164cfa3f59",
+      "bytes": 51204
+    },
+    {
+      "file": "originals/freeup-mau-infographic.png",
+      "destination": "Ảnh mẫu/freeup-mau-infographic.png",
+      "kind": "infographic",
+      "sha256": "98a663cc3187b05136688e4586e60569b976f004482de79b268839d7f618bc2c",
+      "bytes": 76350
+    },
+    {
+      "file": "originals/freeup-mau-video.mp4",
+      "destination": "Video mẫu/freeup-mau-video.mp4",
+      "kind": "video",
+      "sha256": "9be5e4cb2e7bbdbb0cf6b83a5e6dc2a5395a61f75ff3c2479c6742f313aece12",
+      "bytes": 111115
+    }
+  ]
+}

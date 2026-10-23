@@ -1,0 +1,12 @@
+{
+ "name":"FreeUp Content Agent",
+ "version":"1.0.0",
+ "repository":"https://github.com/phuongnguyendhtm/freeup-social-content-agent",
+ "skill":"freeup-social-content",
+ "templateId":"1N2vWZTWNfrXVtVJXM2MUlFf5nQ0EHw3a1LS7cw7-IUc",
+ "status":"candidate",
+ "hostInstallers":["9bizclaw","openclaw","codex","claude"],
+ "liveFacebookVerified":false,
+ "allHostAgentSessionsVerified":false,
+ "assetsOrigin":"FreeUp originals; see assets/manifest.json"
+}
