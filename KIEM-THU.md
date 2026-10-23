@@ -21,7 +21,6 @@ Cloud template mới hiện chỉ có quyền owner. Gói kèm file XLSX export 
 - Đăng bài thật lên fanpage và chạy lịch nền tới thời điểm đăng; không tự đăng bài thử vào Page của khách.
 - Một phiên agent thật mới trên cả bốn host; kiểm tra bộ cài bằng fixture không thay thế kiểm tra này.
 - Đồng bộ Google Sheets trực tiếp qua native Composio của 9BizClaw bằng tài khoản khách; hiện bằng chứng live Sheet dùng connector của phiên triển khai.
-- Windows/macOS/Linux qua GitHub Actions: workflow đã chuẩn bị, cần kết quả run trên GitHub.
 - Video B-roll người thật/giọng AI; engine local hiện có video nền chữ/chuyển động và nhạc.
 
 Không quảng cáo toàn bộ quy trình tự đăng đã nghiệm thu khi các phần trên chưa có bằng chứng.
@@ -30,4 +29,8 @@ Không quảng cáo toàn bộ quy trình tự đăng đã nghiệm thu khi các
 
 - Ngày 23/10/2026: 35/35 kiểm tra tự động đạt trên bản sao gói sạch; `verify:release` đạt, xác minh checksum 8 file phân phối.
 - Mẫu XLSX: đúng hai tab, header và danh sách dropdown; không còn hàng dữ liệu ví dụ.
+- Đã import chính file XLSX đóng gói thành Google Sheets thật, đọc lại header/dropdown và chạy `validateTemplate` đạt. Bản cloud mới giữ đúng mẫu, không được dựng lại bằng suy đoán.
+- Đã clone bản tag `v1.0.0-beta.1` từ GitHub vào thư mục sạch: `npm ci --ignore-scripts --omit=optional`, 35/35 test và `verify:release` đều đạt. Tải tài nguyên bằng `assets-update --version v1.0.0-beta.1` thêm đủ 8 file và xác minh checksum.
+- [GitHub Actions của commit 07b551c](https://github.com/phuongnguyendhtm/freeup-social-content-agent/actions/runs/39886472457) đạt cả Windows, macOS và Ubuntu, Node.js 22.
+- Đã mở một phiên Codex CLI mới chỉ nhận URL và workspace trống. Phiên này dừng đúng khi sandbox chặn kết nối github.com:443, trước bước cài; không dùng bản local để giả kiểm tra URL thành công. Tiêu chí URL trong phiên Codex có quyền tải mạng vẫn cần nghiệm thu.
 - Đã sửa 8 lỗi từ rà soát độc lập, mỗi lỗi có kiểm tra tái hiện trước khi sửa. Kiểm tra bản sao gói sạch phát hiện thêm phụ thuộc thư mục test cũ và đã sửa.

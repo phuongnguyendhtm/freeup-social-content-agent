@@ -13,5 +13,7 @@
  "liveSheetWriteAndReadbackVerified":true,
  "native9BizClawGoogleSheetsVerified":false,
  "nativeCliSheetBlock":"no_identity at plugin-before-tool-call; verify through an authenticated owner chat",
+ "fixedXlsxImportAndSchemaVerified":true,
+ "githubActionsPlatformsVerified":["windows","macos","linux"],
  "assetsOrigin":"FreeUp originals; see assets/manifest.json"
 }

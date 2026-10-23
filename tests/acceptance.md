@@ -13,6 +13,6 @@ Môi trường và bằng chứng hiện tại: [KIEM-THU.md](../KIEM-THU.md). F
 - [ ] Mở một phiên thật mới trên OpenClaw tiêu chuẩn, Codex và Claude Code; xác minh host nhận skill sau cài URL.
 - [ ] Chủ tài khoản duyệt nội dung/Page thử nghiệm cụ thể; upload media qua công cụ native trong chat riêng và nhóm được cấp quyền, đọc lại bài và permalink.
 - [ ] Tạo tác vụ lịch native được chủ cho phép; kiểm tra đến hạn, máy ngủ, đăng chưa rõ kết quả và không đăng trùng.
-- [ ] GitHub Actions đạt trên Windows, macOS và Linux từ repo mới.
+- [x] GitHub Actions đạt trên Windows, macOS và Linux từ repo mới (commit 07b551c).
 
 Chỉ bỏ nhãn thử nghiệm sau khi các mục còn lại có bằng chứng. Không đưa token, log phiên hoặc dữ liệu khách vào repo.
