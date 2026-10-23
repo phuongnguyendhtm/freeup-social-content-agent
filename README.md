@@ -6,13 +6,13 @@ Bản thử nghiệm **1.1.0-beta.1** tập trung vào sản xuất nội dung t
 
 ## Khách cài như thế nào?
 
-Gửi link này cho agent trong 9BizClaw/OpenClaw, Codex hoặc Claude Code local:
+Đây là quà tặng cho học viên đã mua **9BizClaw**. Gửi link này trong chat 9BizClaw:
 
 > https://github.com/phuongnguyendhtm/freeup-social-content-agent
 >
-> Cài FreeUp Content Agent vào hệ thống tôi đang dùng, kiểm tra hoạt động rồi hướng dẫn tôi tạo bài đầu tiên.
+> Cài FreeUp Content Agent vào 9BizClaw của tôi, kiểm tra hoạt động rồi hướng dẫn tôi tạo bài đầu tiên.
 
-Agent đọc [INSTALL.md](INSTALL.md), nhận diện môi trường và cài skill. Cần quyền đọc GitHub, chạy lệnh và ghi file trên máy. Dùng AI đang có của host; viết bài không cần tài khoản Google/Facebook. Engine ảnh/video được cài riêng khi cần. Claude web/Cowork cần cách nhập gói phù hợp với khả năng host, không dùng mặc định bộ cài local này.
+Agent đọc [INSTALL.md](INSTALL.md), xác định workspace/agent trong 9BizClaw và cài skill. Cần quyền đọc GitHub, chạy lệnh và ghi file trên máy. Dùng AI đang có của 9BizClaw; viết bài không cần tài khoản Google/Facebook. Engine ảnh/video được cài riêng khi cần.
 
 ## Khách dùng hằng ngày
 
@@ -39,5 +39,7 @@ Mỗi lần sửa giữ cùng mã bài và tăng phiên bản. Khi nâng cấp t
 Ảnh, carousel, infographic, video nền chữ/chuyển động có nhạc được kết xuất local. Bộ mẫu gồm 7 file tạo riêng cho FreeUp, cập nhật từ chính GitHub FreeUp và kiểm tra SHA-256; giữ file khách đã tự sửa. Video người thật/giọng AI cần nguồn và công cụ tương ứng của host. [Danh mục mẫu](assets/manifest.json).
 
 [Bằng chứng kiểm tra](KIEM-THU.md). Bộ cài có bốn adapter; thử bằng fixture không đồng nghĩa đã nghiệm thu bốn phiên agent thật.
+
+**Đối chiếu nguồn:** [Báo cáo kiểm tra repo FreeUp-Content-Agent](DOI-CHIEU-REPO-GOC.md). Bản 1.1 mới có renderer mẫu cơ bản, chưa chuyển đầy đủ các bố cục và tiêu chuẩn chuyên biệt của repo nguồn.
 
 Mã và media trong repo được tạo riêng cho FreeUp theo quy trình tham khảo từ [FreeUp-Content-Agent](https://github.com/phuongnguyendhtm/FreeUp-Content-Agent) và [100X-Social-Content-Agent](https://github.com/tauhb/100X-Social-Content-Agent).

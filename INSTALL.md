@@ -2,6 +2,8 @@
 
 Cần Node.js 22+, quyền chạy local và mạng để tải gói. Agent cài vào máy đang làm việc; môi trường cloud không có quyền vào máy khách phải báo rõ giới hạn.
 
+Phạm vi quà tặng: học viên dùng 9BizClaw. Chọn `--host 9bizclaw`, tìm đúng root và workspace/agent từ cấu hình của app. Nếu dùng Codex/Claude để hỗ trợ cài hộ, đích cài vẫn là 9BizClaw; không tự chuyển sang cài cho công cụ đang hỗ trợ. Các adapter khác bên dưới là khả năng kỹ thuật, không phải yêu cầu học viên cài thêm môi trường.
+
 1. Clone/tải ZIP repo này vào thư mục riêng. Xác định host của cuộc trò chuyện hiện tại; chỉ hỏi chọn khi có nhiều host mà không xác định được.
 2. Chạy bộ cài tương ứng:
 
