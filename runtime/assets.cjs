@@ -1,0 +1,5 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const {safePath,atomic,hash}=require('./core.cjs');
+function syncBundled(packageRoot,project){const m=JSON.parse(fs.readFileSync(path.join(packageRoot,'assets/manifest.json'),'utf8'));const ledgerFile=safePath(project,'Dữ liệu vận hành/assets.json'),previous=fs.existsSync(ledgerFile)?JSON.parse(fs.readFileSync(ledgerFile,'utf8')):{};const result={added:[],updated:[],preserved:[]},next={...previous};for(const a of m.assets){const src=safePath(path.join(packageRoot,'assets'),a.file),dst=safePath(project,'Tài nguyên đầu vào',a.destination),bytes=fs.readFileSync(src);if(hash(bytes)!==a.sha256)throw Error('ASSET_HASH_MISMATCH');if(fs.existsSync(dst)){const local=hash(fs.readFileSync(dst));if(local===a.sha256){next[a.destination]=a.sha256;continue;}if(local!==previous[a.destination]){result.preserved.push(a.destination);continue;}result.updated.push(a.destination);}else result.added.push(a.destination);fs.mkdirSync(path.dirname(dst),{recursive:true});fs.writeFileSync(dst,bytes);next[a.destination]=a.sha256;}atomic(ledgerFile,next);return result;}
+module.exports={syncBundled};

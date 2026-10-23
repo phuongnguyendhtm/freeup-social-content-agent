@@ -1,0 +1,9 @@
+{
+ "version":1,
+ "sourceTemplateId":"1JpTEMMK9Np-zRvkg9OFiUtivfF3FmoSwRhoSX6C_vto",
+ "freeupTemplateId":"1N2vWZTWNfrXVtVJXM2MUlFf5nQ0EHw3a1LS7cw7-IUc",
+ "tabs":{
+  "ideas":{"title":"💡 IDEA HUB","headers":["ID","Nguồn (Source)","Nội dung/Link","Mẫu Mở Đầu (Hook Pattern)","Góc nhìn AI","Trụ Cột (Pillar)","Phễu (Funnel)","Agent (Media Type)","TRẠNG THÁI (Status)","Timestamp"],"statuses":["📥 Hộp thư ý tưởng","✅ DUYỆT - LÀM NGAY","⚙️ Đang thực hiện...","📦 Sẵn sàng sản xuất","🗑️ Lưu trữ"],"statusColumn":8},
+  "pipeline":{"title":"🚀 CONTENT PIPELINE","headers":["Ticket ID","Format","Caption (Final)","Media Path (Local)","Kênh (Channel)","Hẹn giờ (Post Time)","BỆ PHÓNG (Publish)"],"statuses":["📝 Đang kiểm duyệt","🚀 ĐĂNG BÀI NGAY","✅ HOÀN THÀNH"],"statusColumn":6}
+ }
+}
