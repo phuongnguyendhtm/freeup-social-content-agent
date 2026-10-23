@@ -19,14 +19,14 @@ export const SinglePodcastWave: React.FC<{ content: any; scene?: any }> = ({ con
         return Math.max(10, height);
     });
 
-    const fallbackAvatar = ''; 
+    const fallbackAvatar = '';
     // Đảm bảo chỉ dùng Avatar cá nhân của người dùng (từ media-input), BỎ QUA các ảnh liên quan tới keyword!
     const avatarUrl = scene?.brand_avatar || fallbackAvatar;
     const brandFounder = scene?.brand_name || 'FreeUp';
 
     return (
         <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', padding: '0 80px' }}>
-            
+
             {/* Cụm Avatar & Waveform */}
             <div style={{
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
@@ -43,7 +43,7 @@ export const SinglePodcastWave: React.FC<{ content: any; scene?: any }> = ({ con
                 }}>
                     {avatarUrl && <Img src={avatarUrl} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
                 </div>
-                
+
                 {/* Waveform */}
                 <div style={{ display: 'flex', gap: '15px', alignItems: 'center', height: '100px' }}>
                     {bars.map((h, i) => (
@@ -63,12 +63,12 @@ export const SinglePodcastWave: React.FC<{ content: any; scene?: any }> = ({ con
             </div>
 
             {/* Nội dung Podcast / Trích dẫn */}
-            <h1 style={{ 
-                fontSize: 60, 
-                color: '#FFFFFF', 
+            <h1 style={{
+                fontSize: 60,
+                color: '#FFFFFF',
                 fontWeight: 'bold',
-                textAlign: 'center', 
-                zIndex: 1, 
+                textAlign: 'center',
+                zIndex: 1,
                 lineHeight: 1.4,
                 opacity: slideUp,
                 whiteSpace: 'pre-wrap'

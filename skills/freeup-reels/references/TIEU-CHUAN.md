@@ -9,10 +9,10 @@ Hệ thống đóng vai trò là **Trợ lý Đạo diễn Video Định Dạng 
 - **LUẬT THÉP BẢO TOÀN LƯỢNG Ý:** Tuyệt đối KHÔNG BỎ SÓT ý luận điểm chính nào (Ví dụ: Bài Master Content liệt kê 7 Cách, bạn bắt buộc phải tạo Giọng đọc Voiceover lướt qua đủ 7 Cách. Dù bạn có cấu trúc gộp lại trong 3 Phân Cảnh (Scene), thì đoạn hội thoại Voiceover cũng phải đếm đủ từ cách 1 đến cách 7. Cấm tự ý cắt cụt lượng ý thành 5).
 
 ## 2. QUY TẮC TẠO CAPTION (BẢO TOÀN NỘI DUNG DƯỚI 2200 TỪ/KÝ TỰ + BỘ LỌC DOCTOR)
-- Trích xuất dữ liệu từ `master_content.md`. 
+- Trích xuất dữ liệu từ `master_content.md`.
 - **LƯU Ý:** Bài video Reels sẽ **DÙNG LUÔN NỘI DUNG MASTER CONTENT BẢN DÀI**, nhưng phải tóm gọn khéo léo sao cho định dạng **DƯỚI 2200 KÝ TỰ (tương đương khoảng 400 - 500 từ)** để tránh bị nền tảng cắt xén hiển thị.
 - Hành động: Viết lại Caption. **CẤM VIẾT QUÁ NGẮN**. Bạn phải tổng hợp và giữ lại GẦN NHƯ TRỌN VẸN các bài học của Master Content (không được vứt bỏ hoặc lược dịch qua quýt thành vài dòng). Hãy giữ bài viết ở mức **dài vừa đủ sát mốc 2000 - 2200 ký tự**. Lưu vào tệp `reels/caption.txt`.
-- **⚠️ [QUAN TRỌNG] BỘ LỌC CAPTION DOCTOR:** 
+- **⚠️ [QUAN TRỌNG] BỘ LỌC CAPTION DOCTOR:**
   Dù độ dài văn bản được tối giản hóa, hệ thống PHẢI ĐẢM BẢO nội dung được xử lý ngữ pháp mạch lạc như hành vi đăng tải của con người thực thụ trên trạng thái mạng xã hội. Tuyệt đối loại trừ các thẻ siêu dữ liệu nội bộ như `## 1. THIẾT LẬP BỐI CẢNH`, các dấu `**visual_hook_core**`. Khuyến khích thêm các hashtag liên quan với cường độ phù hợp.
 
 ## 3. QUY TẮC ĐỊNH DẠNG JSON (MEDIA PAYLOAD)
@@ -26,7 +26,7 @@ Hệ thống cần cung cấp đối tượng `media_payload` chuẩn hóa dựa
   "keyword": "Warren Buffett",
   "script_segments": [
     {
-      "duration": 5, 
+      "duration": 5,
       "video_source_override": "pexels",
       "b_roll_keywords": ["money", "wall street"],
       "layout_skin": "title_hook",
@@ -59,7 +59,7 @@ Hệ thống cần cung cấp đối tượng `media_payload` chuẩn hóa dựa
 
 ## 3. TIÊU CHUẨN KIỂM SOÁT ĐẦU RA (SMART DIRECTING)
 
-- **⚠️ QUY TẮC ĐỘ DÀI (DURATION & COMPLETENESS):** 
+- **⚠️ QUY TẮC ĐỘ DÀI (DURATION & COMPLETENESS):**
   Tuyệt đối không được "chặt cụt" Master Content. Nếu bài gốc có 10 bài học, Kịch bản Reels phải truyền tải đầy đủ sức nặng thông tin (có thể gom ý khéo léo). Tổng thời lượng bắt buộc dao động từ **45 giây đến 60 giây**, chia thành ít nhất 5-8 phân cảnh (`script_segments`). Đừng làm video quá ngắn (Mật độ 1 giây tương đương 3 từ vựng giọng đọc).
 
 - **⚠️ TRÍ TUỆ ĐIỀU PHỐI B-ROLL (VIDEO SOURCE ROUTING):**

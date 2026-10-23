@@ -12,7 +12,7 @@ export const SingleTweetOverlay: React.FC<{ scene: any }> = ({ scene }) => {
     const content = scene.visual_content;
     const brandHandle = scene.brand_handle || brandConfig.brand_identity?.handle || '@freeup';
     const brandName = scene.brand_name || brandConfig.founder || 'FreeUp';
-    
+
     // Nảy Box lên
     const popBox = spring({ frame, fps, config: { damping: 14, stiffness: 120 } });
     const translateY = interpolate(popBox, [0, 1], [50, 0]);
@@ -39,9 +39,9 @@ export const SingleTweetOverlay: React.FC<{ scene: any }> = ({ scene }) => {
                     <div style={{ width: 100, height: 100, backgroundColor: '#333', borderRadius: '50%', overflow: 'hidden' }}>
                         {/* Logo lấy từ Props Base64 để tránh CORS */}
                         {avatarImg ? (
-                            <img 
-                                src={avatarImg} 
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                            <img
+                                src={avatarImg}
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             />
                         ) : null}
                     </div>

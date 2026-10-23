@@ -14,15 +14,15 @@ export const SingleQuoteBox: React.FC<{ content: any }> = ({ content }) => {
                 border: '4px solid #333',
                 borderRadius: 40, padding: '100px 80px', width: '100%',
                 position: 'relative',
-                opacity: slideUp, 
+                opacity: slideUp,
                 transform: `scale(${interpolate(slideUp, [0, 1], [0.8, 1])})`
             }}>
                 <div style={{ position: 'absolute', top: -140, left: 60, fontSize: 250, color: content.brand_accent || '#B6FF00', lineHeight: 1 }}>"</div>
-                <div style={{ 
-                    fontSize: 45, 
-                    fontWeight: 'bold', 
-                    color: '#FFF', 
-                    lineHeight: 1.5, 
+                <div style={{
+                    fontSize: 45,
+                    fontWeight: 'bold',
+                    color: '#FFF',
+                    lineHeight: 1.5,
                     textAlign: 'left',
                     whiteSpace: 'pre-wrap'
                 }}>

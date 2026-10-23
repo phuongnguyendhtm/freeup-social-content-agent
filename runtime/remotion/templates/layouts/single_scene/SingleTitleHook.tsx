@@ -9,14 +9,14 @@ export const SingleTitleHook: React.FC<{ content: any }> = ({ content }) => {
 
     return (
         <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <h1 style={{ 
-                fontSize: 65, 
-                color: '#FFFFFF', 
+            <h1 style={{
+                fontSize: 65,
+                color: '#FFFFFF',
                 fontWeight: 'bold',
-                textAlign: 'center', 
-                zIndex: 1, 
+                textAlign: 'center',
+                zIndex: 1,
                 textTransform: 'capitalize',
-                padding: '0 80px', 
+                padding: '0 80px',
                 transform: `translateY(${interpolate(slideUp, [0, 1], [100, 0])}px)`,
                 opacity: slideUp,
                 lineHeight: 1.3,

@@ -20,7 +20,7 @@ Bắt buộc đúng 3 câu — không thêm, không bớt:
 > **Ví dụ:** Càng chăm chỉ đăng bài, trang cá nhân càng ít tương tác. Số đông vẫn nghĩ siêng năng là giải pháp. Đây là cỗ máy "AI Content Engine" đảo ngược lại toàn bộ trò chơi 👇
 
 ## [PHẦN 2 — GIỚI THIỆU / KẾT NỐI — MIRROR EFFECT]
-Dung lượng: 4–6 dòng. Dùng đại từ "tôi" dẫn sang "bạn". 
+Dung lượng: 4–6 dòng. Dùng đại từ "tôi" dẫn sang "bạn".
 - Kỹ thuật Mirror: Mô tả nỗi đau bằng đúng ngôn ngữ họ tự nói với bản thân. Không viết chung chung.
 > **Tệ:** "Nhiều người gặp khó khăn với marketing"
 > **Tốt:** "Bạn đăng bài mỗi ngày. Like có. Comment có. Nhưng cuối tháng nhìn lại — doanh thu vẫn vậy."
@@ -51,7 +51,7 @@ Chiếm 50–60% độ dài bài viết. Viết sai phần này = bài không c�
 5. **Động từ hành động mạnh:** xây, tạo, tự động hóa, triển khai, chuyển đổi, khuếch đại.
 
 ## [PHẦN 6 — BÀI HỌC ĐÚC KẾT — CÂU KẾT ĐÁNG SHARE]
-Dung lượng: 3–4 câu rút ra triết lý cốt lõi. 
+Dung lượng: 3–4 câu rút ra triết lý cốt lõi.
 Câu cuối cùng phải là câu đáng share "chạm tới tim" — khiến người đọc phải copy gửi ngay cho bạn bè. Không gắn nhãn "bài học" mà viết tự nhiên như một lời tự sự.
 **Công thức câu đáng share:**
 - Nghịch lý: *"Càng cố gắng bán, càng khó bán. Càng tập trung giúp, tiền càng tự đến."*

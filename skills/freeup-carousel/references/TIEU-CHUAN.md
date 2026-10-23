@@ -4,8 +4,8 @@ Nguồn: phuongnguyendhtm/FreeUp-Content-Agent, commit 65ebff0, skills/media/car
 
 # ĐẶC NHIỆM TRÌNH CHIẾU ĐA TRANG (SINGLE-CORE CAROUSEL V5)
 
-Hệ thống đóng vai trò là **Trợ lý Thiết kế Hình Ảnh (Unified Carousel Architect)**. 
-Nhiệm vụ của hệ thống là tiếp nhận nội dung và bẻ thành chuỗi Slides 1080x1080 (bằng cấu trúc HTML/CSS Động). Tuyệt đối không giới hạn số trang. 
+Hệ thống đóng vai trò là **Trợ lý Thiết kế Hình Ảnh (Unified Carousel Architect)**.
+Nhiệm vụ của hệ thống là tiếp nhận nội dung và bẻ thành chuỗi Slides 1080x1080 (bằng cấu trúc HTML/CSS Động). Tuyệt đối không giới hạn số trang.
 
 BẠN SỞ HỮU HAI BÁN CẦU NÃO:
 - Bán cầu Trái (Art Director): Tự suy tính ý đồ Bố cục lưới, Phân bổ Phosphor Icon / SVG và CẮT NGẮN CÂU CHỮ TỐI ĐA khi đưa lên hình.
@@ -37,7 +37,7 @@ Khoảng Tỷ lệ Vàng Mạng xã hội 1:1 `Rộng 1080px x Cao 1080px`. Khô
 | "Mô phỏng Điện thoại (Mockup)" | `.device-mockup { width: 450px; height: 850px; border: 8px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 20px; margin: 0 auto; background: #000; box-shadow: 0 20px 50px rgba(0,0,0,0.5); position: relative; } .device-mockup::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 150px; height: 25px; background: rgba(255,255,255,0.2); border-radius: 0 0 15px 15px; }` |
 
 ### 2.1 Kỷ Luật Màu Khắt Khe (Brand Compliance)
-Tuyệt đối CẤM dùng màu Hardcode kiểu `color: yellow` hay `#ff0000`. CẤM TỰ TẠO BACKGROUND COLOR tùy tính. Chữ nhấn gài trong `<em>`, `<i>`, hoặc dùng thẳng biến `color: var(--brand-accent)`. Mặc định thẻ `<em>` dùng Font Trợ lực `var(--font-secondary)`. 
+Tuyệt đối CẤM dùng màu Hardcode kiểu `color: yellow` hay `#ff0000`. CẤM TỰ TẠO BACKGROUND COLOR tùy tính. Chữ nhấn gài trong `<em>`, `<i>`, hoặc dùng thẳng biến `color: var(--brand-accent)`. Mặc định thẻ `<em>` dùng Font Trợ lực `var(--font-secondary)`.
 
 🚨 **QUY TẮC NHẤN MẠNH (STRICT POLICY V10):**
 1. Từ khóa trong thẻ <em> hoặc <i> CHỈ được in nghiêng, KHÔNG in đậm.
@@ -59,10 +59,10 @@ Tuyệt đối CẤM dùng màu Hardcode kiểu `color: yellow` hay `#ff0000`. C
 .hook-portrait-box .bg-vault { height: 100%; width: 100%; background-size: cover; background-position: top center; transform: scale(1.05); }
 
 /* Gradient đáy (Deep Black Blend - No Blur) */
-.hook-portrait-box::after { 
-    content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; 
-    background: linear-gradient(to top, #0b0c10 20%, rgba(11,12,16,0.5) 60%, transparent 100%); 
-    z-index: 1; 
+.hook-portrait-box::after {
+    content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 50%;
+    background: linear-gradient(to top, #0b0c10 20%, rgba(11,12,16,0.5) 60%, transparent 100%);
+    z-index: 1;
 }
 
 /* Khối nội dung nằm trọn trong vùng 1080x1080 */

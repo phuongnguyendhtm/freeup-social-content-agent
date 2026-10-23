@@ -37,7 +37,7 @@ export const RichText: React.FC<{ text: string; staggerDelay?: number; brandAcce
             if (part.startsWith('*') && part.endsWith('*')) {
                 content = part.slice(1, -1);
                 isHighlight = true;
-                
+
                 if (themeType === 'headline') {
                     // Dành cho Tiêu Đề: Nền dạ quang chữ trắng
                     styleToApply = {

@@ -5,10 +5,10 @@ import { RichText } from '../../components/RichText';
 export const SingleMinimalWarning: React.FC<{ content: any }> = ({ content }) => {
     const frame = useCurrentFrame();
     const { fps } = useVideoConfig();
-    
+
     // Nảy khung cảnh báo
     const popAlert = spring({ frame, fps, config: { damping: 10, stiffness: 200 } });
-    
+
     // Tim đập khung cảnh báo (Pulse effect)
     const pulsate = Math.sin(frame / 6) * 10 + 20;
 
@@ -29,12 +29,12 @@ export const SingleMinimalWarning: React.FC<{ content: any }> = ({ content }) =>
                 gap: '30px'
             }}>
                 {/* Icon Cảnh báo */}
-                <div style={{ 
-                    backgroundColor: '#FF3366', 
-                    color: '#FFF', 
-                    padding: '10px 40px', 
-                    borderRadius: 20, 
-                    fontSize: 40, 
+                <div style={{
+                    backgroundColor: '#FF3366',
+                    color: '#FFF',
+                    padding: '10px 40px',
+                    borderRadius: 20,
+                    fontSize: 40,
                     fontWeight: '900',
                     textTransform: 'uppercase',
                     letterSpacing: 3
@@ -43,11 +43,11 @@ export const SingleMinimalWarning: React.FC<{ content: any }> = ({ content }) =>
                 </div>
 
                 {/* Nội dung Cảnh báo */}
-                <h1 style={{ 
-                    fontSize: 60, 
-                    color: '#FFFFFF', 
+                <h1 style={{
+                    fontSize: 60,
+                    color: '#FFFFFF',
                     fontWeight: 'bold',
-                    textAlign: 'center', 
+                    textAlign: 'center',
                     lineHeight: 1.4,
                     margin: 0,
                     whiteSpace: 'pre-wrap'

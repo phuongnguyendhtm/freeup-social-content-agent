@@ -12,7 +12,7 @@ export const SingleSplitCompare: React.FC<{ content: any }> = ({ content }) => {
 
     return (
         <AbsoluteFill style={{ flexDirection: 'column' }}>
-            
+
             {/* TOP HALF: Vấn Đề (Vùng Tối) */}
             <div style={{
                 flex: 1, backgroundColor: '#111111',
@@ -24,14 +24,14 @@ export const SingleSplitCompare: React.FC<{ content: any }> = ({ content }) => {
                 <div style={{ color: '#888', fontSize: 35, fontWeight: '800', marginBottom: 30, textTransform: 'uppercase', letterSpacing: 2 }}>
                     {content.left_title || 'Cách Làm Cũ'}
                 </div>
-                <h2 style={{ 
+                <h2 style={{
                     fontSize: 55, color: '#CCC', fontWeight: 'bold',
                     textAlign: 'center', margin: 0, lineHeight: 1.4, whiteSpace: 'pre-wrap'
                 }}>
                     <RichText text={content.headline || "Nội dung cũ"} staggerDelay={0} />
                 </h2>
             </div>
-            
+
             {/* BOTTOM HALF: Giải Pháp (Vùng Sáng Accent) */}
             <div style={{
                 flex: 1, backgroundColor: 'rgba(0,0,0,0.85)',
@@ -42,7 +42,7 @@ export const SingleSplitCompare: React.FC<{ content: any }> = ({ content }) => {
                 <div style={{ color: content.brand_accent || '#B6FF00', fontSize: 35, fontWeight: '900', marginBottom: 30, textTransform: 'uppercase', letterSpacing: 2 }}>
                     {content.right_title || 'Tư Duy Mới'}
                 </div>
-                <h2 style={{ 
+                <h2 style={{
                     fontSize: 65, color: '#FFF', fontWeight: '900',
                     textAlign: 'center', margin: 0, lineHeight: 1.4, whiteSpace: 'pre-wrap'
                 }}>

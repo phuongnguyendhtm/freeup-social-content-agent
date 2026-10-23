@@ -5,7 +5,7 @@ import { RichText } from '../../components/RichText';
 export const SingleStatisticPop: React.FC<{ content: any }> = ({ content }) => {
     const frame = useCurrentFrame();
     const { fps } = useVideoConfig();
-    
+
     // Đập to con số
     const popNumber = spring({ frame, fps, config: { damping: 10, stiffness: 150 } });
     // Trượt text lên
@@ -28,11 +28,11 @@ export const SingleStatisticPop: React.FC<{ content: any }> = ({ content }) => {
                 </span>
 
                 {/* Dòng Headline Giải thích */}
-                <h1 style={{ 
-                    fontSize: 55, 
-                    color: '#FFFFFF', 
+                <h1 style={{
+                    fontSize: 55,
+                    color: '#FFFFFF',
                     fontWeight: 'bold',
-                    textAlign: 'center', 
+                    textAlign: 'center',
                     textTransform: 'capitalize',
                     transform: `translateY(${interpolate(slideText, [0, 1], [50, 0])}px)`,
                     opacity: slideText,
