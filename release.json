@@ -1,6 +1,6 @@
 {
   "name":"FreeUp Content Agent",
-  "version":"2.0.0",
+  "version":"2.0.1",
   "repository":"https://github.com/phuongnguyendhtm/freeup-social-content-agent",
   "skill":"freeup-social-content",
   "status":"stable",

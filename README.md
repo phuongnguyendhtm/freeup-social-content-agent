@@ -25,4 +25,4 @@ Có thể trả lời số hoặc nói tự nhiên. Nếu chọn số mà chưa 
 
 Giữ tám chuyên môn và tiêu chuẩn sản xuất từ FreeUp-Content-Agent commit 65ebff0. Xem DOI-CHIEU-REPO-GOC.md để biết phạm vi chuyển đổi. Reels có tám layout Remotion nguồn. Bản này dùng tài nguyên FreeUp hoặc file khách cung cấp; chưa tích hợp tự tìm Pexels hoặc tạo giọng ElevenLabs. Giọng đọc cần audio thật hoặc TTS sẵn có của host. Học viên xem thành phẩm trước khi tự đăng.
 
-Kiểm tra: npm test và npm run verify:release. Chi tiết cài và báo cáo lỗi: [INSTALL.md](INSTALL.md). Phiên bản: **2.0.0**.
+Kiểm tra: npm test và npm run verify:release. Chi tiết cài và báo cáo lỗi: [INSTALL.md](INSTALL.md). Phiên bản: **2.0.1** — bổ sung phục hồi lỗi native Windows khi đổi tên `.fs-safe-move-…tmp` ở lần cài mới.

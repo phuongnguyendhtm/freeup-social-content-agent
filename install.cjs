@@ -15,6 +15,7 @@ function mergeAllowlist(cfg,id,names=[NAME]){
 function copyDir(a,b){fs.mkdirSync(b,{recursive:true});for(const e of fs.readdirSync(a,{withFileTypes:true})){if(e.name==='node_modules'||e.name==='.git')continue;const from=path.join(a,e.name),to=path.join(b,e.name);if(e.isSymbolicLink())throw Error('SYMLINK_NOT_ALLOWED');if(e.isDirectory())copyDir(from,to);else fs.copyFileSync(from,to);}}
 function readJson(file){return JSON.parse(fs.readFileSync(file,'utf8').replace(/^\uFEFF/,''));}
 const {safeLog}=require('./runtime/diagnostics.cjs');
+const {stageDigest,recoverFinalRename}=require('./runtime/install-recovery.cjs');
 function nativeRuntime(root,{node,cli,stateDir}={}){
  const runtime={node:node||(root?path.join(root,'vendor/node',process.platform==='win32'?'node.exe':'node'):process.execPath),cli:cli||(root?path.join(root,'vendor/node_modules/openclaw/openclaw.mjs'):null),state:stateDir||(root?path.join(root,'openclaw-state'):null)};
  if(!runtime.cli||!runtime.state)throw Error('NATIVE_CLI_AND_STATE_REQUIRED');
@@ -63,12 +64,14 @@ function install({host,workspace,packageRoot=__dirname,native:useNative=true,roo
    const exists=fs.existsSync(destination);if(exists){if(!owns(destination,receipt,name))throw Error('EXISTING_SKILL_OWNER_MISMATCH: '+destination);backup(destination,name);}
    if(isNative){const existing=inventory.skills.find(s=>s.name===name);
     if(exists&&existing){copyDir(stage,destination);receipt.updateModes[name]='update-owned-registered';}
-    else{try{runNative(['skills','install',stage,'--agent',agent,'--as',name,...exists?['--force']:[]]);receipt.updateModes[name]=exists?'native-repair':'native-install';}
+    else{const digest=exists?null:stageDigest(stage);try{runNative(['skills','install',stage,'--agent',agent,'--as',name,...exists?['--force']:[]]);receipt.updateModes[name]=exists?'native-repair':'native-install';}
      catch(error){
       // A native Windows rename may leave an identifiable, partially published FreeUp package.
-      // Do not recover policy denials, unknown directories or absent native targets.
-      if(!repairable(error)||!owns(destination,receipt,name))throw error;
-      backup(destination,name);copyDir(stage,destination);receipt.updateModes[name]='repair-owned-native-rename';(report.recoveredErrors??=[]).push({skill:name,error:safeLog(error.message)});
+      // Never recover policy denials or overwrite an unidentified destination.
+      if(repairable(error)&&owns(destination,receipt,name)){backup(destination,name);copyDir(stage,destination);receipt.updateModes[name]='repair-owned-native-rename';}
+      else if(recoverFinalRename({error,version:runtime.version,stage,destination,wasPresent:exists,digest}))receipt.updateModes[name]='repair-native-final-rename';
+      else throw error;
+      (report.recoveredErrors??=[]).push({skill:name,mode:receipt.updateModes[name],error:safeLog(error.message)});
      }
     }
    }else{copyDir(stage,destination);receipt.updateModes[name]='local';}

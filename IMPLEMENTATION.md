@@ -1,6 +1,6 @@
 # Lịch sử bản rút gọn 1.1
 
-Tài liệu này ghi lại giai đoạn cũ. Bản hiện hành là 2.0.0; xem README.md, INSTALL.md và KIEM-THU.md cho cách cài và kết quả kiểm tra mới.
+Tài liệu này ghi lại giai đoạn cũ. Xem README.md, INSTALL.md và KIEM-THU.md cho phiên bản hiện hành, cách cài và kết quả kiểm tra mới.
 
 Yêu cầu ngày 23/10/2026 thay thế luồng 1.0: bỏ Google Sheets và tự đăng Facebook, tập trung tạo nội dung/media để khách tự đăng.
 

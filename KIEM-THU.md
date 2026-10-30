@@ -1,4 +1,15 @@
-# Kiểm thử 2.0.0 — 30/10/2026
+# Kiểm thử 2.0.1 — 30/10/2026
+
+- Đã nhận lỗi gốc của học viên: native 2026.9.9 bị `EPERM` khi đổi tên `.fs-safe-move-…tmp` sang `skills/freeup-social-content`. Nhánh phục hồi 2.0.0 yêu cầu đích đã tồn tại nên không xử lý lần cài mới này.
+- Thêm kiểm thử tái hiện đúng JSON log có đường dẫn Windows escape hai lớp. Các ca kiểm tra từ chối sai đích, nguồn ngoài thư mục skills, chính sách chặn, nguồn bị thay, native chưa xác minh và thư mục do tiến trình khác tạo.
+- Kiểm tra cạnh tranh khi tạo/thay thư mục, lỗi chép hai tệp đầu, ghi tệp dở và định danh filesystem bằng 0: không ghi đè thư mục lạ, không xóa tệp không chứng minh được sở hữu; lần chép lỗi thông thường có thể chạy lại.
+- Windows local: 70/70 test đạt trên Node 24.22.1 và 22.22.3; `verify:release` đạt cho 2.0.1, chín skill và 11 tài nguyên có checksum.
+- Native OpenClaw 2026.9.9 thật, workspace thử riêng có dấu/khoảng trắng: cài mới bình thường đạt. Lượt tái hiện có kiểm soát gây `EPERM` tại đúng lời gọi đổi tên cuối của native: phục hồi đủ chín skill, inventory thật xác nhận, receipt `verified: true`, `mediaReady: true`, selftest xuất PNG/B-roll/Reels đạt. Không sửa file native đã cài hoặc cấu hình host thật.
+- Review độc lập đã kiểm tra cơ chế phục hồi và bảo toàn dữ liệu; không còn phát hiện P1/P2 trong phạm vi bản sửa.
+
+Chưa chạy trực tiếp trên máy học viên. Lượt tái hiện chứng minh đường phục hồi cho lỗi đã gửi, không xác định tiến trình nào khóa thư mục trên máy đó. Lỗi quyền ghi thực sự hoặc định danh thư mục không xác minh được vẫn dừng và lưu báo cáo; không đổi ACL, tắt bảo vệ Windows hay bỏ qua chính sách native.
+
+## Lịch sử kiểm thử 2.0.0 — 30/10/2026
 
 - Windows local: 49/49 test đạt trên Node 22.22.3 và 24.22.1. GitHub Actions đạt trên Windows, macOS, Ubuntu: [run 41047932579](https://github.com/phuongnguyendhtm/freeup-social-content-agent/actions/runs/41047932579). Ca phục hồi rename chỉ chạy trên Windows.
 - `verify:release` đạt: version/lockfile 2.0.0, chín skill và 11 tài nguyên có checksum; không có adapter Google Sheets hoặc tự đăng Facebook.
@@ -9,7 +20,7 @@
 - Test hồi quy: lỗi native giữ cả stdout/stderr; chính sách chặn không được đổi thành copy trực tiếp; thư mục không xác định sở hữu không bị ghi đè; phục hồi rename có backup; cài lại giữ dữ liệu/dependencies; đường dẫn tương đối được chuẩn hóa; media tải thiếu hoặc selftest lỗi không có receipt thành công.
 - Review độc lập đã kiểm tra lại các bản sửa về đường dẫn, binary Remotion, hai chế độ Chromium, log media và allowlist riêng của agent; không còn phát hiện P1/P2 chưa xử lý trong phạm vi này.
 
-Thông báo học viên gửi chỉ là lời tổng kết của agent, chưa có mã lỗi gốc hoặc phiên bản máy học viên. Không kết luận đã tái hiện đúng lỗi đó. Bản mới ghi bước lỗi, exit code và log đã che khóa; agent phải đọc báo cáo thay vì chỉ trả lời “native lỗi”.
+Tại thời điểm kiểm thử 2.0.0, chưa có mã lỗi gốc hoặc phiên bản máy học viên. Báo cáo này khi đó chưa xác nhận tái hiện đúng lỗi; bằng chứng mới và phần sửa tương ứng được ghi ở mục 2.0.1 phía trên.
 
 Bản này dùng tài nguyên FreeUp/file khách; chưa tích hợp tìm Pexels hoặc tạo giọng ElevenLabs. TTS tiếng Việt và gửi file qua từng kênh còn phụ thuộc host. Lượt 30/10 không chạy lại tất cả bố cục hoặc gửi tin ra kênh ngoài; các kiểm tra rộng hơn dưới đây thuộc bản trước.
 
