@@ -2,7 +2,7 @@
 
 ## Chọn thư mục
 
-Giải nén ZIP vào thư mục cố định, đường dẫn ngắn như D:\FreeUp. Thư mục này chứa Tài nguyên đầu vào, Nội dung đã tạo, Dữ liệu vận hành và Hệ thống. Không tự thay workspace của 9BizClaw bằng thư mục này.
+Giải nén ZIP, lấy thư mục FreeUp bên trong đặt ở vị trí cố định, đường dẫn ngắn như D:\FreeUp. Thư mục này chứa Tài nguyên đầu vào, Nội dung đã tạo, Dữ liệu vận hành và Hệ thống. Không tự thay workspace của 9BizClaw bằng thư mục này.
 
 Agent xác định root host từ %APPDATA%/9BizClaw-v3/install-root.json, agent hiện tại và workspace trong cấu hình. Dùng Node đi kèm host. Bản native 2026.9.9 được thử với Node 24.22.1; mã FreeUp hỗ trợ Node 22+ nhưng native có thể yêu cầu cao hơn.
 

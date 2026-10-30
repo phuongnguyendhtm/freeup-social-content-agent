@@ -1,12 +1,18 @@
 # Kiểm thử 2.1.0 — 30/10/2026
 
-- Windows: 85/85 test đạt trên Node 24.22.1 và 22.22.3. Kiểm tra phiên bản, chín skill và checksum 11 tài nguyên đạt; quick_validate xác nhận entrypoint cùng chín SKILL.md.
+- Windows: 86/86 test đạt trên Node 24.22.1 và 22.22.3. Kiểm tra phiên bản, chín skill và checksum 11 tài nguyên đạt; quick_validate xác nhận entrypoint cùng chín SKILL.md.
 - Thử thư mục có dấu/khoảng trắng, ghi nhớ project qua lần cài mới, chuyển dữ liệu cũ, xung đột dữ liệu, cài bị ngắt ở ba giai đoạn, lỗi media sau chuyển state v1 → v2 và cài lại. Nguồn cũ được giữ, receipt lỗi không báo thành công.
 - Giữ kiểm thử lỗi native EPERM và các điều kiện từ chối của 2.0.1. Kiểm thử mới từ chối đường dẫn bị mất/junction, bảo vệ binding của workspace khác và khóa ghi bài trong khi chuyển thư mục.
 - Review độc lập không còn P1/P2 trong phạm vi bộ cài portable. Reviewer chạy thêm 10 ca chuyển dữ liệu/cài lại.
 - Forward-test độc lập: đọc ba trường có sẵn và nguồn, chỉ hỏi ba trường thiếu; sau xác nhận, tiến trình CLI mới lấy lại đúng hồ sơ, guide PNG 1672×941 và số 4 → carousel. Logo/Foxy/menu tám số đã được xem trực quan; các đường dẫn tiêu chuẩn/skill giải quyết đúng.
 
-Thử native và media thật của 2.1.0 được bổ sung vào báo cáo sau khi hoàn tất. Chưa chạy trực tiếp trên máy học viên; gửi ảnh qua kênh ngoài phụ thuộc quyền/cấu hình host.
+- Native 2026.9.9 thật trong workspace thử riêng: cài mới với EPERM tại rename cuối được cố tình tái hiện cho cả chín skill; bộ cài phục hồi, inventory xác nhận, receipt verified/mediaReady đều true.
+- Nâng cấp từ 2.0.1 bằng ZIP giải nén vào thư mục FreeUp riêng đạt. Đối chiếu hồ sơ đã xác nhận, nội dung bài và hash tư liệu: giống nguyên bản; dữ liệu nguồn, skill khác, allowlist chung và agent khác vẫn giữ.
+- Cài lại bằng bộ cài mới, bỏ --project: nhớ đúng thư mục đã chọn, backup chín skill, verified/mediaReady/selftest đạt; đối chiếu lại hồ sơ/bài/tư liệu vẫn nguyên vẹn. Biên nhận trước được lưu vào Lịch sử cài đặt.
+- Mỗi lượt xuất thật năm PNG (ảnh đơn, carousel ba trang, infographic), B-roll 3 giây và Reels 6,06 giây. Đã xem ảnh/khung hình, probe video H.264 1080×1920/30fps và audio AAC. Tên thư mục/thành phẩm tiếng Việt hoạt động. Đây là fixture kiểm tra công cụ, không phải nội dung học viên.
+- CI phát hiện alias thư mục tạm /var của macOS bị chặn khi staging. Đã sửa bằng cách phân giải thư mục tạm hệ điều hành trước khi tạo staging; thêm ca RED → GREEN, giữ kiểm tra từ chối junction ở thư mục dữ liệu.
+
+Chưa chạy trực tiếp trên máy học viên. Tái hiện EPERM chứng minh đường phục hồi đã gửi, không xác định tiến trình khóa thư mục trên máy đó. Quyền ghi thực sự bị chặn vẫn cần xử lý theo báo cáo. Gửi media qua từng kênh phụ thuộc quyền/cấu hình host; lượt 2.1.0 không gửi ra kênh ngoài.
 
 ## Lịch sử kiểm thử 2.0.1 — 30/10/2026
 

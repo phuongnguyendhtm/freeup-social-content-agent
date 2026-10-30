@@ -4,7 +4,7 @@ Phiên bản **2.1.0**: một thư mục FreeUp cố định để thêm tư li�
 
 ## Cài một lần
 
-Tải ZIP bản phát hành, giải nén vào đường dẫn ngắn, ví dụ D:\FreeUp. Gửi cho 9BizClaw:
+[Tải FreeUp 2.1.0 — ZIP](https://github.com/phuongnguyendhtm/freeup-social-content-agent/releases/download/v2.1.0/FreeUp-Content-Agent-2.1.0-9BizClaw.zip). Giải nén, lấy thư mục FreeUp bên trong đặt ở vị trí cố định như D:\FreeUp. Gửi cho 9BizClaw:
 
 > Cài FreeUp từ thư mục D:\FreeUp theo INSTALL.md, gồm công cụ ảnh/video. Dùng thư mục này làm nơi làm việc, giữ dữ liệu hiện có và chạy đầy đủ kiểm tra trước khi báo xong.
 
