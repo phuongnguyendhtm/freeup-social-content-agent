@@ -2,7 +2,7 @@
 
 Bộ trợ lý cho học viên mua 9BizClaw: từ chủ đề đến bài, ảnh và video, lưu tại máy để tải về tự đăng. Không cần Google Sheets hoặc quyền đăng Facebook.
 
-Gửi link GitHub này cho agent trong 9BizClaw và nói: **“Cài bộ quà tặng FreeUp cho tôi.”** Agent đọc INSTALL.md, cài skill chính cùng tám chuyên môn và tài nguyên FreeUp. Cần Node 22+ (9BizClaw có sẵn), mạng lúc tải gói và engine media. Không tự thay model/persona của khách.
+Gửi link GitHub này cho agent trong 9BizClaw và nói: **“Cài hoặc cập nhật bộ quà tặng FreeUp, gồm công cụ ảnh/video, rồi tự kiểm tra hoạt động cho tôi.”** Agent đọc INSTALL.md, dùng `--with-media` để cài chín skill, tài nguyên và xuất thử năm dạng media. Cần Node 22+, quyền chạy lệnh và mạng lúc tải gói. Bộ cài tự tạo thư mục dữ liệu trên máy chạy 9BizClaw.
 
 Lần đầu agent kiểm tra thông tin đang có, trình xác nhận và chỉ hỏi phần còn thiếu. Đủ hồ sơ và được khách xác nhận, agent gửi ảnh ngang có logo FreeUp, Foxy và menu số:
 
@@ -23,6 +23,6 @@ Có thể trả lời số hoặc nói tự nhiên. Nếu chọn số mà chưa 
 
 **Tài nguyên đầu vào** chứa ảnh/video/nhạc và thương hiệu khách; **Nội dung đã tạo** chứa thành phẩm; **Dữ liệu vận hành** chứa hồ sơ và phiên bản. Mẫu FreeUp lấy từ repo quà tặng này, có checksum và giữ file khách đã sửa khi cập nhật. Ảnh hướng dẫn dùng nhận diện FreeUp; sản phẩm cho khách dùng thương hiệu khách.
 
-Giữ tám chuyên môn và tiêu chuẩn sản xuất từ FreeUp-Content-Agent commit 65ebff0. Xem DOI-CHIEU-REPO-GOC.md để biết phạm vi chuyển đổi. Reels có tám layout Remotion nguồn; giọng đọc cần audio thật hoặc TTS có sẵn được cấp quyền. Bản beta cần xem thành phẩm trước khi tự đăng.
+Giữ tám chuyên môn và tiêu chuẩn sản xuất từ FreeUp-Content-Agent commit 65ebff0. Xem DOI-CHIEU-REPO-GOC.md để biết phạm vi chuyển đổi. Reels có tám layout Remotion nguồn. Bản này dùng tài nguyên FreeUp hoặc file khách cung cấp; chưa tích hợp tự tìm Pexels hoặc tạo giọng ElevenLabs. Giọng đọc cần audio thật hoặc TTS sẵn có của host. Học viên xem thành phẩm trước khi tự đăng.
 
-Kiểm tra: npm test và npm run verify:release. Chi tiết cài: INSTALL.md. Phiên bản: **2.0.0-beta.1**.
+Kiểm tra: npm test và npm run verify:release. Chi tiết cài và báo cáo lỗi: [INSTALL.md](INSTALL.md). Phiên bản: **2.0.0**.

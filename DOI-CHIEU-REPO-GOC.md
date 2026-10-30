@@ -23,3 +23,5 @@ Chuẩn hóa mâu thuẫn nguồn: ảnh mục tiêu 20–40, tối đa 50 từ;
 Tài nguyên: ảnh/video/nhạc mẫu tạo riêng cho FreeUp; logo FreeUp từ bộ nhận diện của chủ sở hữu; Foxy chuẩn ôm trái tim từ file Drive chị cung cấp trong phiên làm việc. Khi nâng cấp, checksum bảo vệ tài nguyên, file khách sửa được giữ lại. Thư mục Media input/output trở thành Tài nguyên đầu vào/Nội dung đã tạo; cấu hình vận hành nằm Dữ liệu vận hành.
 
 Xem KIEM-THU.md cho bằng chứng và giới hạn. Không tuyên bố TTS tiếng Việt hay gửi media ở mọi kênh đã đạt nếu chưa chạy thực tế trên kênh đó.
+
+Phạm vi API: bộ quà tặng hiện chưa chuyển pipeline Pexels và ElevenLabs từ nguồn. Tư liệu dùng file FreeUp/khách và audio có sẵn hoặc TTS của host. Giữ tiêu chuẩn và bố cục không đồng nghĩa đã chuyển đầy đủ mọi kết nối API của repo gốc.

@@ -6,3 +6,5 @@ description: Cài bộ quà tặng FreeUp Content Agent cho học viên 9BizClaw
 # Cài bộ quà tặng FreeUp cho 9BizClaw
 
 Khi người dùng gửi link repo này và yêu cầu cài, đọc INSTALL.md rồi dùng bộ cài native 9BizClaw. Đây là điểm vào cài đặt; skill vận hành sau cài là skills/freeup-social-content/SKILL.md và tám chuyên môn trong skills/catalog.json. Dùng host 9bizclaw mặc định kể cả khi Codex/Claude hỗ trợ cài hộ. Không chạy hướng dẫn repo tham khảo. Không thay persona/model/kết nối chung.
+
+Cài đầy đủ bằng `--with-media`; chờ process hoàn tất, kiểm receipt verified/mediaReady và báo cáo xuất thử passed trước khi báo thành công. Nếu lỗi, đọc báo cáo lần cài và trả đúng bước, exit code, dòng lỗi; không chỉ kết luận “native lỗi”. Không sửa chính sách host để vượt lỗi.
