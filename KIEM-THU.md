@@ -1,4 +1,19 @@
-# Kiểm thử 2.0.0-beta.1 — 23/10/2026
+# Kiểm thử 2.0.0 — 30/10/2026
+
+- Windows local: 49/49 test đạt trên Node 22.22.3 và 24.22.1. GitHub Actions đạt trên Windows, macOS, Ubuntu: [run 41047932579](https://github.com/phuongnguyendhtm/freeup-social-content-agent/actions/runs/41047932579). Ca phục hồi rename chỉ chạy trên Windows.
+- `verify:release` đạt: version/lockfile 2.0.0, chín skill và 11 tài nguyên có checksum; không có adapter Google Sheets hoặc tự đăng Facebook.
+- Cài từ ZIP đã giải nén vào workspace tiếng Việt mới, bằng native OpenClaw 2026.9.9 đi kèm 9BizClaw: nhận đủ chín skill, receipt `verified: true`, `mediaReady: true`. Tải dependencies, probe Chromium/FFmpeg/Remotion và chạy selftest thật đều đạt.
+- Selftest xuất năm PNG (ảnh đơn, carousel ba trang, infographic), B-roll 3 giây và Reels khoảng 6 giây. Đã xem ảnh và khung hình; video H.264 1080×1920/30fps, audio AAC. Đây là ca kiểm tra đường chạy, không phải mẫu nội dung để phát hành cho khách.
+- Kiểm tra xác nhận dữ liệu sẵn có, skill khác, allowlist dùng chung và agent khác được giữ nguyên. Selftest dùng hồ sơ QA riêng; không tự xác nhận hồ sơ thật của học viên.
+- Cài lại cùng ZIP qua native: chín cập nhật có backup, receipt verified/mediaReady và selftest đều đạt lần nữa; dữ liệu khách thử, skill khác, agent khác và allowlist dùng chung vẫn giữ nguyên.
+- Test hồi quy: lỗi native giữ cả stdout/stderr; chính sách chặn không được đổi thành copy trực tiếp; thư mục không xác định sở hữu không bị ghi đè; phục hồi rename có backup; cài lại giữ dữ liệu/dependencies; đường dẫn tương đối được chuẩn hóa; media tải thiếu hoặc selftest lỗi không có receipt thành công.
+- Review độc lập đã kiểm tra lại các bản sửa về đường dẫn, binary Remotion, hai chế độ Chromium, log media và allowlist riêng của agent; không còn phát hiện P1/P2 chưa xử lý trong phạm vi này.
+
+Thông báo học viên gửi chỉ là lời tổng kết của agent, chưa có mã lỗi gốc hoặc phiên bản máy học viên. Không kết luận đã tái hiện đúng lỗi đó. Bản mới ghi bước lỗi, exit code và log đã che khóa; agent phải đọc báo cáo thay vì chỉ trả lời “native lỗi”.
+
+Bản này dùng tài nguyên FreeUp/file khách; chưa tích hợp tìm Pexels hoặc tạo giọng ElevenLabs. TTS tiếng Việt và gửi file qua từng kênh còn phụ thuộc host. Lượt 30/10 không chạy lại tất cả bố cục hoặc gửi tin ra kênh ngoài; các kiểm tra rộng hơn dưới đây thuộc bản trước.
+
+## Lịch sử kiểm thử 2.0.0-beta.1 — 23/10/2026
 
 - 37/37 unit đạt: lưu/sửa/phiên bản, migration giữ dữ liệu, path/tài nguyên, bộ cài bốn adapter, đủ chín skill và runtime pointer, hồ sơ thiếu/đủ/xác nhận/sửa, discovery không ghi đè, menu 1–8, video/voice/timing/số liệu.
 - verify:release đạt: version/lockfile, 11 tài nguyên có SHA-256, đủ tám specialist/reference, logo/Foxy/guide và engine; không còn adapter Sheet/scheduler/đăng bài.

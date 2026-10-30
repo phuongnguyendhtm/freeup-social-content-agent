@@ -1,5 +1,7 @@
 # Triển khai 2.0 — đặc tả theo yêu cầu ngày 23/10/2026
 
+Cập nhật 30/10: bộ cài 2.0.0 đã kiểm 49/49 ca trên Windows Node 22/24, CI ba hệ điều hành đạt; cài mới và cài lại ZIP qua 9BizClaw đều nhận đủ chín skill và xuất thử năm dạng media. Xem KIEM-THU.md. Các ghi chú tiến độ ngày 23/10 bên dưới là lịch sử; phạm vi API hiện hành được ghi rõ trong DOI-CHIEU-REPO-GOC.md.
+
 1. Giữ đủ tám chuyên môn nguồn: nghiên cứu, copywriter, ảnh đơn, carousel, infographic, chuỗi bình luận, B-roll và Reels; đóng thành skill 9BizClaw và kèm tiêu chuẩn đầy đủ được chuyển từ commit 65ebff0. Chỉ loại tích hợp Sheets/đăng và các chỉ dẫn gắn môi trường cũ.
 2. Dùng HTML động để giữ các bố cục, không ép tất cả vào mẫu 1.1. Khung ảnh 1080×1350, carousel 1080×1080, infographic 1080×1350; asset local FreeUp/khách; theme khách; kiểm tràn và chữ. Video B-roll thật, Reels nhiều cảnh, âm thanh/phụ đề theo dữ liệu khách.
 3. Hồ sơ: thu thập từ nguồn hồ sơ mà agent được phép đọc, hợp nhất theo trường và ghi nguồn, trình xác nhận; chỉ hỏi thiếu. Không tự đánh dấu đủ/đã xác nhận. Đủ và được khách xác nhận mới cấp ảnh hướng dẫn ngang.
