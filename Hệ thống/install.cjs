@@ -53,7 +53,7 @@ function install({host,workspace,project,defaultProject,packageRoot=__dirname,na
  if(plan)return {...receipt,plan:true};
  fs.mkdirSync(workspace,{recursive:true});
  const reportPath=core.safePath(workspace,'.freeup-install-reports',Date.now()+'-'+randomUUID()+'.json');
- const report={...receipt,status:'running',step:'preflight',commands:[],installed:[],startedAt:new Date().toISOString()};let stages,runtime,pendingReceipt,releaseMigration;
+ const report={...receipt,status:'running',step:'preflight',commands:[],installed:[],startedAt:new Date().toISOString()};let stages,tempRoot,runtime,pendingReceipt,releaseMigration;
  const checkpoint=step=>{report.step=step;core.atomic(reportPath,report);onProgress(step);};
  const runNative=args=>{try{return native(runtime,args,report);}finally{core.atomic(reportPath,report);}};
  const backup=(destination,name)=>{const to=core.safePath(workspace,'.freeup-backups',Date.now()+'-'+randomUUID()+'-'+name);copyDir(destination,to);(receipt.backups??=[]).push(to);report.backups=receipt.backups;};
@@ -68,7 +68,7 @@ function install({host,workspace,project,defaultProject,packageRoot=__dirname,na
   if(fs.existsSync(pendingReceipt)){const archive=core.safePath(project,'Dữ liệu vận hành/Lịch sử cài đặt',Date.now()+'-'+randomUUID()+'.json');fs.mkdirSync(path.dirname(archive),{recursive:true});fs.copyFileSync(pendingReceipt,archive,fs.constants.COPYFILE_EXCL);}
   core.atomic(pendingReceipt,{...receipt,verified:false,status:'installing',reportPath});
   if(isNative){runtime=nativeRuntime(root,{stateDir,cli,node});report.runtime=runtime;const help=runNative(['skills','install','--help']);if(!help.includes('--agent')||!help.includes('--as'))throw Error('NATIVE_CLI_INCOMPATIBLE: cập nhật 9BizClaw; CLI cần skills install --agent --as.');}
-  stages=fs.mkdtempSync(path.join(os.tmpdir(),'freeup-stage-'));let inventory;
+  tempRoot=fs.realpathSync(os.tmpdir());stages=fs.mkdtempSync(path.join(tempRoot,'freeup-stage-'));let inventory;
   if(isNative){checkpoint('inventory:before');inventory=readNativeInventory(runNative(['skills','list','--agent',agent,'--json']));}
   for(const name of names){
    checkpoint('install:'+name);
@@ -125,7 +125,7 @@ function install({host,workspace,project,defaultProject,packageRoot=__dirname,na
   receipt.reportPath=reportPath;core.atomic(core.safePath(project,'Dữ liệu vận hành/install-receipt.json'),receipt);
   Object.assign(report,receipt,{status:'completed',step:'completed',finishedAt:new Date().toISOString()});core.atomic(reportPath,report);return receipt;
  }catch(error){Object.assign(report,{status:'failed',verified:false,mediaReady:false,failedStep:report.step,error:safeLog(error.message),finishedAt:new Date().toISOString()});core.atomic(reportPath,report);if(pendingReceipt)core.atomic(pendingReceipt,{...receipt,verified:false,mediaReady:false,status:'failed',reportPath});error.reportPath=reportPath;error.message+='\nBáo cáo: '+reportPath;throw error;}
- finally{if(releaseMigration)releaseMigration();if(stages){const rel=path.relative(os.tmpdir(),stages);if(rel&&!rel.startsWith('..')&&!path.isAbsolute(rel))try{fs.rmSync(stages,{recursive:true,force:true,maxRetries:3});}catch{}}}
+ finally{if(releaseMigration)releaseMigration();if(stages){const rel=path.relative(tempRoot,stages);if(rel&&!rel.startsWith('..')&&!path.isAbsolute(rel))try{fs.rmSync(stages,{recursive:true,force:true,maxRetries:3});}catch{}}}
 }
 function parse(argv){const o={};for(let i=0;i<argv.length;i++){const a=argv[i];if(a==='--plan'){o.plan=true;continue;}if(a==='--with-media'){o.withMedia=true;continue;}if(!['--host','--workspace','--project','--root','--agent','--state-dir','--cli','--node'].includes(a)||!argv[i+1])throw Error('INVALID_INSTALL_ARGUMENT');o[a==='--state-dir'?'stateDir':a.slice(2)]=argv[++i];}return o;}
 function runCLI(argv=process.argv.slice(2),defaultProject=path.resolve(__dirname,'..')){try{const o=parse(argv);o.defaultProject=defaultProject;o.onProgress=step=>console.error('FreeUp: '+step);if(!o.host||o.host==='auto')o.host=process.env.FREEUP_HOST||'9bizclaw';if(['9bizclaw','openclaw'].includes(o.host)&&!o.root&&!o.stateDir){const pointer=path.join(process.env.APPDATA||os.homedir(),'9BizClaw-v3/install-root.json');if(fs.existsSync(pointer))o.root=readJson(pointer).path;}if(!o.workspace&&['claude','codex'].includes(o.host))o.workspace=process.cwd();console.log(JSON.stringify(install(o),null,2));}catch(e){console.error(e.message);process.exitCode=1;}}

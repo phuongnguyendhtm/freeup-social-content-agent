@@ -78,3 +78,8 @@ test('migration blocks normal content writes until all skill pointers have switc
  for(const project of [old.project,opts.project])assert.equal(fs.existsSync(path.join(project,'Dữ liệu vận hành/.lock')),false);
  assert.equal(core.save(opts.project,{id:'after',format:'text',caption:'After'}).caption,'After');
 });
+test('installer resolves the operating system temporary directory alias before staging and cleans its stage',t=>{
+ const opts=fixture(t),os=require('node:os'),parent=path.dirname(opts.project),temp=path.join(parent,'real-temp'),alias=path.join(parent,'temp-alias');
+ fs.mkdirSync(temp);fs.symlinkSync(temp,alias,process.platform==='win32'?'junction':'dir');t.mock.method(os,'tmpdir',()=>alias);
+ assert.equal(installer.install(opts).verified,true);assert.deepEqual(fs.readdirSync(temp),[]);
+});
