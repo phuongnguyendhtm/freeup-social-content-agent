@@ -6,6 +6,7 @@
 - Windows local: 70/70 test đạt trên Node 24.22.1 và 22.22.3; `verify:release` đạt cho 2.0.1, chín skill và 11 tài nguyên có checksum.
 - Native OpenClaw 2026.9.9 thật, workspace thử riêng có dấu/khoảng trắng: cài mới bình thường đạt. Lượt tái hiện có kiểm soát gây `EPERM` tại đúng lời gọi đổi tên cuối của native: phục hồi đủ chín skill, inventory thật xác nhận, receipt `verified: true`, `mediaReady: true`, selftest xuất PNG/B-roll/Reels đạt. Không sửa file native đã cài hoặc cấu hình host thật.
 - Review độc lập đã kiểm tra cơ chế phục hồi và bảo toàn dữ liệu; không còn phát hiện P1/P2 trong phạm vi bản sửa.
+- Lượt ZIP trong thư mục thử lồng sâu phát hiện giới hạn Windows: binary Remotion dài 260/261 ký tự không khởi chạy (`ENOENT`), trong khi cùng binary ở đường dẫn 257/258 ký tự chạy được. Đây là giới hạn chưa tự khắc phục; bộ cài báo media chưa sẵn sàng, không cấp receipt thành công. Hướng dẫn đã ghi rõ không tự chuyển workspace của khách.
 
 Chưa chạy trực tiếp trên máy học viên. Lượt tái hiện chứng minh đường phục hồi cho lỗi đã gửi, không xác định tiến trình nào khóa thư mục trên máy đó. Lỗi quyền ghi thực sự hoặc định danh thư mục không xác minh được vẫn dừng và lưu báo cáo; không đổi ACL, tắt bảo vệ Windows hay bỏ qua chính sách native.
 
