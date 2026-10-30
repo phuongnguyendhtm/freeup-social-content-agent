@@ -15,11 +15,13 @@ if(args[0]==='skills'&&args[1]==='list'){
  if(scenario.noisyFailure){console.error('A startup warning. '.repeat(60));console.log('NATIVE_SPECIFIC_FAILURE: original root cause');process.exit(7);}
  fs.mkdirSync(root,{recursive:true});
  if(scenario.partialRename&&name==='freeup-social-content'){
-  fs.cpSync(args[2],dest,{recursive:true});fs.unlinkSync(path.join(dest,'SKILL.md'));
+  fs.cpSync(args[2],dest,{recursive:true,filter:()=>true});fs.unlinkSync(path.join(dest,'SKILL.md'));
   console.error('failed to install skill: Error: EPERM: operation not permitted, rename staging -> '+dest);process.exit(1);
  }
  if(scenario.missingExecutable&&name==='freeup-social-content')throw Error('unreachable');
- fs.cpSync(args[2],dest,{recursive:true});console.log('Installed '+name);
+ // Keep the fixture independent of Node 22's Windows no-filter cpSync fast path.
+ // Production staging copies individual files; real native CLI is verified separately.
+ fs.cpSync(args[2],dest,{recursive:true,filter:()=>true});console.log('Installed '+name);
 }else if(args[0]==='config'&&args[1]==='set'){
  if(!args.includes('--dry-run')){
   const batch=JSON.parse(fs.readFileSync(args[args.indexOf('--batch-file')+1],'utf8'));

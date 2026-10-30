@@ -1,6 +1,6 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process');
 const base=path.join(__dirname,'../verification');fs.mkdirSync(base,{recursive:true});
-function run(root,probe=false){fs.cpSync(path.join(__dirname,'../runtime'),path.join(root,'runtime'),{recursive:true});const r=cp.spawnSync(process.execPath,[path.join(root,'runtime/cli.cjs'),'doctor',...probe?['--probe','true']:[]],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);return JSON.parse(r.stdout);}
+function run(root,probe=false){fs.cpSync(path.join(__dirname,'../runtime'),path.join(root,'runtime'),{recursive:true,filter:()=>true});const r=cp.spawnSync(process.execPath,[path.join(root,'runtime/cli.cjs'),'doctor',...probe?['--probe','true']:[]],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);return JSON.parse(r.stdout);}
 test('doctor does not borrow packages from an ancestor when a student install is empty',async t=>{
  const root=fs.mkdtempSync(path.join(base,'doctor-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
  const result=run(root);

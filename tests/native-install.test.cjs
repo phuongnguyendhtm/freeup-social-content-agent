@@ -53,7 +53,7 @@ test('targeted allowlist changes never widen shared defaults used by other agent
 });
 test('media setup failure retains command diagnostics and never writes a successful receipt',t=>{
  const opts=fixture(t),pkg=path.join(opts.stateDir,'package');fs.mkdirSync(path.join(pkg,'runtime'),{recursive:true});
- for(const dir of ['assets','skills'])fs.cpSync(path.join(__dirname,'..',dir),path.join(pkg,dir),{recursive:true});
+ for(const dir of ['assets','skills'])fs.cpSync(path.join(__dirname,'..',dir),path.join(pkg,dir),{recursive:true,filter:()=>true});
  for(const file of ['package.json','package-lock.json'])fs.copyFileSync(path.join(__dirname,'..',file),path.join(pkg,file));
  fs.writeFileSync(path.join(pkg,'runtime/setup.cjs'),"console.error('NPM_DOWNLOAD_FAILED: connection reset');process.exitCode=23;");
  let error;try{installer.install({...opts,packageRoot:pkg,withMedia:true});}catch(e){error=e;}
