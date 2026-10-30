@@ -7,4 +7,13 @@ dist/
 FreeUp Content Agent/
 *.sqlite*
 browser_data/
+**/runtime.json
+**/media-setup-report.json
+/Dữ liệu vận hành/*
+!/Dữ liệu vận hành/Hướng dẫn.md
+/Nội dung đã tạo/*
+!/Nội dung đã tạo/Hướng dẫn.md
+/Tài nguyên đầu vào/**
+!/Tài nguyên đầu vào/**/
+!/Tài nguyên đầu vào/**/Hướng dẫn.md
 

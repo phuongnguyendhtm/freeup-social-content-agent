@@ -1,0 +1,28 @@
+{
+  "name": "FreeUp Content Agent",
+  "version": "2.1.0",
+  "repository": "https://github.com/phuongnguyendhtm/freeup-social-content-agent",
+  "skill": "freeup-social-content",
+  "status": "stable",
+  "mode": "local-content",
+  "features": [
+    "research",
+    "writing",
+    "images",
+    "carousel",
+    "infographic",
+    "comment-chain",
+    "broll",
+    "reels",
+    "local-files"
+  ],
+  "hostInstallers": [
+    "9bizclaw",
+    "openclaw",
+    "codex",
+    "claude"
+  ],
+  "allHostAgentSessionsVerified": false,
+  "native9BizClawLocalArticleAndImageVerified": true,
+  "assetsOrigin": "FreeUp originals; see assets/manifest.json"
+}
