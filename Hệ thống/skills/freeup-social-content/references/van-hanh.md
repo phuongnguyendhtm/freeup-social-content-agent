@@ -6,7 +6,7 @@ runtime.json của skill đã cài lưu project, workspace, engineSkill và skil
 - save --input file.json nhận id, format, channel, topic, caption, masterContent, media, expectedRevision. format kỹ thuật giữ idea/text/image/carousel/infographic/comment_chain/broll/reels. id dùng chữ/số/gạch ASCII; cập nhật cần expectedRevision từ get.
 - list/get lấy nội dung đã lưu. Giữ nguyên key có dấu | và quote đúng. Lấy đường dẫn do CLI trả, không ghép tên theo phiên bản cũ.
 - render --input brief.json xuất PNG/MP4; kiểm file rồi save. Giữ cùng id khi chuyển định dạng; không tự rút gọn bài gốc ngoài yêu cầu.
-- assets-sync dùng mẫu đi kèm; assets-update --version v2.1.0 dùng tài nguyên GitHub FreeUp có checksum và giữ file khách đã sửa.
+- assets-sync dùng mẫu đi kèm; assets-update --version v2.1.1 dùng tài nguyên GitHub FreeUp có checksum và giữ file khách đã sửa.
 
 Tài nguyên đầu vào: Thương hiệu của tôi, Ảnh cá nhân, Ảnh nhân vật, Ảnh minh họa, Video nền, Nhạc nền, Giọng đọc, Mẫu FreeUp. Mẫu được thêm khi cài. File khách giữ nguyên tên.
 

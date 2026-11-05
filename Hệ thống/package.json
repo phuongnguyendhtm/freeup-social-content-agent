@@ -1,6 +1,6 @@
 {
   "name": "freeup-social-content-agent",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": true,
   "description": "FreeUp Content Agent: viết bài và tạo media trong chat, lưu trên máy để khách tự đăng",
   "engines": {

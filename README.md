@@ -1,10 +1,10 @@
 # FreeUp — bộ quà tặng cho học viên 9BizClaw
 
-Phiên bản **2.1.0**: một thư mục FreeUp cố định để thêm tư liệu, tạo nội dung và lấy thành phẩm. Học viên ra lệnh trong 9BizClaw, xem kết quả rồi tự đăng.
+Phiên bản **2.1.1**: một thư mục FreeUp cố định để thêm tư liệu, tạo nội dung và lấy thành phẩm. Học viên ra lệnh trong 9BizClaw, xem kết quả rồi tự đăng.
 
 ## Cài một lần
 
-[Tải FreeUp 2.1.0 — ZIP](https://github.com/phuongnguyendhtm/freeup-social-content-agent/releases/download/v2.1.0/FreeUp-Content-Agent-2.1.0-9BizClaw.zip). Giải nén, lấy thư mục FreeUp bên trong đặt ở vị trí cố định như D:\FreeUp. Gửi cho 9BizClaw:
+[Tải FreeUp 2.1.1 — ZIP](https://github.com/phuongnguyendhtm/freeup-social-content-agent/releases/download/v2.1.1/FreeUp-Content-Agent-2.1.1-9BizClaw.zip). Giải nén, lấy thư mục FreeUp bên trong đặt ở vị trí cố định như D:\FreeUp. Gửi cho 9BizClaw:
 
 > Cài FreeUp từ thư mục D:\FreeUp theo INSTALL.md, gồm công cụ ảnh/video. Dùng thư mục này làm nơi làm việc, giữ dữ liệu hiện có và chạy đầy đủ kiểm tra trước khi báo xong.
 
@@ -38,6 +38,10 @@ Chọn số hoặc nói trực tiếp, ví dụ **“Làm carousel 5 trang về 
 
 Giữ nguyên vị trí thư mục sau cài. Khi cập nhật, giải nén bản mới ở nơi riêng rồi yêu cầu cập nhật vào thư mục FreeUp đang dùng; không giải nén đè tư liệu.
 
-Giữ tám chuyên môn và tiêu chuẩn sản xuất từ repo FreeUp-Content-Agent commit 65ebff0; xem DOI-CHIEU-REPO-GOC.md. Tài nguyên dùng FreeUp/file khách, không lấy media của tác giả. Không Google Sheets, không tự đăng Facebook. Chưa tích hợp Pexels/ElevenLabs; giọng đọc dùng audio thật hoặc TTS được phép trên host.
+Mẫu đầu vào: **3 ảnh cá nhân, 3 ảnh nhân vật, 3 video nền và 14 MP3 giữ nguyên từ bản gốc của chị Phương**. Sau cài, mẫu nằm trong thư mục tương ứng để học viên xem và thay bằng tư liệu của mình. Các tài nguyên FreeUp trước đây vẫn giữ.
+
+**Không bắt buộc API Pexels/Gemini** cho viết bài và dựng media từ tư liệu có sẵn. Tìm tư liệu tự động qua Pexels và tạo ảnh mới qua Gemini API chưa tích hợp; thêm key đơn thuần không bật tính năng này. Xem [API và tài nguyên mẫu](API%20và%20tài%20nguyên%20mẫu.md).
+
+Giữ tám chuyên môn và tiêu chuẩn sản xuất từ repo FreeUp-Content-Agent commit 65ebff0; xem DOI-CHIEU-REPO-GOC.md. Tài nguyên dùng FreeUp/file khách và các mẫu từ repo của chị Phương đã ghi nguồn. Không Google Sheets, không tự đăng Facebook. Chưa tích hợp Pexels/ElevenLabs; giọng đọc dùng audio thật hoặc TTS được phép trên host.
 
 Chi tiết: [cài đặt](INSTALL.md), [hướng dẫn học viên](Hướng%20dẫn%20sử%20dụng.md), [kiểm thử](KIEM-THU.md). Phát triển: chạy npm test và npm run verify:release trong Hệ thống.

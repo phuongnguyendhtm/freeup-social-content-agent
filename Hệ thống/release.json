@@ -1,6 +1,6 @@
 {
   "name": "FreeUp Content Agent",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "repository": "https://github.com/phuongnguyendhtm/freeup-social-content-agent",
   "skill": "freeup-social-content",
   "status": "stable",
@@ -24,5 +24,5 @@
   ],
   "allHostAgentSessionsVerified": false,
   "native9BizClawLocalArticleAndImageVerified": true,
-  "assetsOrigin": "FreeUp originals; see assets/manifest.json"
+  "assetsOrigin": "FreeUp originals and owner-selected input examples/music; see assets/NGUON-TAI-NGUYEN.md"
 }

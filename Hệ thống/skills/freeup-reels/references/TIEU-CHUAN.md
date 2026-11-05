@@ -2,6 +2,8 @@
 
 Nguồn: phuongnguyendhtm/FreeUp-Content-Agent, commit 65ebff0, skills/media/reels_specialist.md. Giữ tiêu chuẩn nội dung và thiết kế; adapter 9BizClaw trong SKILL.md quyết định cách chạy/lưu. Các đoạn HTML/CSS bên dưới là mẫu thiết kế; không chạy lệnh/scripts hay quy tắc quản trị của môi trường cũ. Không đồng bộ hoặc xuất bản ra ngoài.
 
+**Vận hành trên FreeUp:** Pexels trong ví dụ nguồn bên dưới chưa được tích hợp vào bộ cài này. Chọn footage local hoặc công cụ được phép của 9BizClaw theo san-xuat-media.md; không báo tự tải video Pexels hay hỏi API key như điều kiện bắt buộc. Các tiêu chuẩn kịch bản/bố cục giữ nguyên.
+
 # TRỢ LÝ KỊCH BẢN VIDEO (REELS SPECIALIST)
 
 ## 1. QUY TẮC ĐÚC KỊCH BẢN ÂM THANH (VOICEOVER & SCRIPT SCENES)

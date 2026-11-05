@@ -1,9 +1,9 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "owner": "phuongnguyendhtm",
   "repository": "freeup-social-content-agent",
-  "origin": "FreeUp original samples and brand assets provided by owner; Foxy reference supplied by user via Drive. No source author media copied.",
-  "license": "FreeUp gift recipients may use and adapt these original sample assets for their content.",
+  "origin": "FreeUp original samples and brand assets, plus selected input examples and unchanged background music from the owner-specified FreeUp-Content-Agent repository. See NGUON-TAI-NGUYEN.md.",
+  "license": "Existing FreeUp original sample permissions remain unchanged. Owner-selected source files retain their original provenance; see NGUON-TAI-NGUYEN.md.",
   "assets": [
     {
       "file": "originals/freeup-focus.wav",
@@ -81,6 +81,328 @@
       "kind": "mascot",
       "sha256": "13fc274cec7843ba5fad54c5f6734f5caee87ecc7e3b663929cb3db95f758503",
       "bytes": 984134
+    },
+    {
+      "file": "ban-goc/personal_image/master_face.png",
+      "destination": "Ảnh cá nhân/Mẫu tham khảo/01 - Chân dung gốc.png",
+      "kind": "personal-example",
+      "sha256": "de933d795a2c8b17417dbfbf659b265f78b2858168e7cb6c2a3a76f78c22c69e",
+      "bytes": 4169888,
+      "exampleOnly": true,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/personal_image/master_face.png",
+        "blob": "7df31df6f9421f5982dc4677b92660babe41646a"
+      }
+    },
+    {
+      "file": "ban-goc/personal_image/phuong_tt.jpg",
+      "destination": "Ảnh cá nhân/Mẫu tham khảo/02 - Ảnh cá nhân trong bối cảnh.jpg",
+      "kind": "personal-example",
+      "sha256": "48ee6ddd54815f729d32cbf0e20a22922ee2f37fcbf0e0c32387269d61e452df",
+      "bytes": 11766054,
+      "exampleOnly": true,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/personal_image/phuong_tt.jpg",
+        "blob": "34a3f921839490d354fc72a5e7d61830665f57e2"
+      }
+    },
+    {
+      "file": "ban-goc/personal_image/phuong_an_cung_nhom.jpg",
+      "destination": "Ảnh cá nhân/Mẫu tham khảo/03 - Ảnh hoạt động cùng nhóm.jpg",
+      "kind": "personal-example",
+      "sha256": "d075494b3757a59240edd306b72ddef4d7e49931ea9c5f4be571f8884d811223",
+      "bytes": 10039557,
+      "exampleOnly": true,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/personal_image/phuong_an_cung_nhom.jpg",
+        "blob": "afb93504680458d71bc5e9000f52590360bcc5b0"
+      }
+    },
+    {
+      "file": "ban-goc/celebrity_image/bill_gates.png",
+      "destination": "Ảnh nhân vật/Mẫu tham khảo/01 - Bill Gates.png",
+      "kind": "character-example",
+      "sha256": "05b82169974bff9d82b46ad506aa3a9bab15802a6f3acdab130e00dcf5a99653",
+      "bytes": 38759,
+      "exampleOnly": true,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/celebrity_image/bill_gates.png",
+        "blob": "952dd550d247a655afcd7e3546338eeb584fbeb5"
+      }
+    },
+    {
+      "file": "ban-goc/celebrity_image/sam_altman.png",
+      "destination": "Ảnh nhân vật/Mẫu tham khảo/02 - Sam Altman.png",
+      "kind": "character-example",
+      "sha256": "3394e65769980deae90324defb69d283c826b24a2a839e53eb0a4c7fd7749521",
+      "bytes": 44492,
+      "exampleOnly": true,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/celebrity_image/sam_altman.png",
+        "blob": "e4fd0929ebce10644414c4e7d11bcc4b8feb4403"
+      }
+    },
+    {
+      "file": "ban-goc/celebrity_image/steve_jobs.png",
+      "destination": "Ảnh nhân vật/Mẫu tham khảo/03 - Steve Jobs.png",
+      "kind": "character-example",
+      "sha256": "24c56dbce3827ae3b7e8c922b349292ef4e0499150ac893c76ece811742ab299",
+      "bytes": 109209,
+      "exampleOnly": true,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/celebrity_image/steve_jobs.png",
+        "blob": "a4c76a69b70743d952010bffa2d5c61efaf31e4c"
+      }
+    },
+    {
+      "file": "ban-goc/background-video/1. mở máy -1.mp4",
+      "destination": "Video nền/Mẫu tham khảo/01 - Mở máy tính.mp4",
+      "kind": "footage-example",
+      "sha256": "0e52e42c8a8eb5febe50689328697bcb784cbb7e2e13fd98452e0bcc639122c6",
+      "bytes": 6312242,
+      "exampleOnly": true,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-video/1. mở máy -1.mp4",
+        "blob": "299b968fd3da97a8f7acb2b4c4148a18f5daf9c2"
+      }
+    },
+    {
+      "file": "ban-goc/background-video/2. xem dien thoai .mp4",
+      "destination": "Video nền/Mẫu tham khảo/02 - Xem điện thoại.mp4",
+      "kind": "footage-example",
+      "sha256": "3c12dfbce8e8960d857d8c14aa3032d36422e4667f2eeec67f4913e8adc5b960",
+      "bytes": 5569362,
+      "exampleOnly": true,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-video/2. xem dien thoai .mp4",
+        "blob": "4b6b7149cbc81e3aaac48d19c5bebd45deec8192"
+      }
+    },
+    {
+      "file": "ban-goc/background-video/3. xem giấy .mp4",
+      "destination": "Video nền/Mẫu tham khảo/03 - Xem giấy tờ.mp4",
+      "kind": "footage-example",
+      "sha256": "f75ca0e068ae049953c5cf089ae2d8fdb51e8b0d1e3b79cb50e545cdd2ec21f4",
+      "bytes": 9417100,
+      "exampleOnly": true,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-video/3. xem giấy .mp4",
+        "blob": "3a76eaff27eb25d6b04543c24de266bd3f31de9f"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/1.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/1.mp3",
+      "kind": "music-original",
+      "sha256": "c3dbc97e172b564c6f516c43fc7eb8bd2c6c8c8803fd04bc5da8e60dcaca6047",
+      "bytes": 342351,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/1.mp3",
+        "blob": "73b64711e809f2f78faa3b6409b1d535808b0fdf"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/10.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/10.mp3",
+      "kind": "music-original",
+      "sha256": "4a0dc597db28babc8d2290575d2dc776ae3a375a50c11120a8db3068c7eca798",
+      "bytes": 293450,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/10.mp3",
+        "blob": "512e78f5432b243ef7304ddefa1ac6d0a191e498"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/11.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/11.mp3",
+      "kind": "music-original",
+      "sha256": "db2e6ecc00ff262a765bdf22457ea7f388b2491f03d0b1d339629c6a1b571b3c",
+      "bytes": 248728,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/11.mp3",
+        "blob": "f3679faf3ce543d8a1c89d2f98f840bdf7d6638c"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/2.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/2.mp3",
+      "kind": "music-original",
+      "sha256": "7c5fe69e82e48e0cc0ce871471a56c1499a23228d794e7b1e4afafaa13a8258d",
+      "bytes": 110802,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/2.mp3",
+        "blob": "d1f1efa28c5d3569a932975fc72bd82fad71b94d"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/3.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/3.mp3",
+      "kind": "music-original",
+      "sha256": "4be0060c9dd9a753c6f2dc153c7aee119b2832ea98dfbf4e3b42d40b34debc4c",
+      "bytes": 299301,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/3.mp3",
+        "blob": "8031173987f53bb6d17c9fe06c10424c14956c46"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/4.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/4.mp3",
+      "kind": "music-original",
+      "sha256": "9d09aace436e0ae02861756dda77ad535df7cb10a3097f919c72422559325b5f",
+      "bytes": 354472,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/4.mp3",
+        "blob": "8da93f6cbb3903b1abd31ec53620e9e5e5d495b7"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/5.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/5.mp3",
+      "kind": "music-original",
+      "sha256": "f1a522d1ba2042f63f7a9be063ff1fe76867b1f451eb2eae216f4c9527eaa63d",
+      "bytes": 438482,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/5.mp3",
+        "blob": "a99f46eb2eedba7dcdd24a1795141f1f64a06d1a"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/6.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/6.mp3",
+      "kind": "music-original",
+      "sha256": "42db73da9be35ef37ab63105c15460e7a26937c3d47934597da8feac3cdf27e0",
+      "bytes": 315184,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/6.mp3",
+        "blob": "d1d6a738b1dd60e1a94265588ff8bd673809d110"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/7.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/7.mp3",
+      "kind": "music-original",
+      "sha256": "a2954a5c721320de41241c7391bd7155c042686daa54bbc5f2af351423c120af",
+      "bytes": 773685,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/7.mp3",
+        "blob": "9a4d599e893bf77b4d13133a31931155f9ba2da5"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/8.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/8.mp3",
+      "kind": "music-original",
+      "sha256": "92cbe1c1b80139e244e85643676a02d1bb70c4654d9c706ee57f5a03388c7682",
+      "bytes": 571393,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/8.mp3",
+        "blob": "2d9aa925fbf687efa3a2c16ce0b682c31f9ad23a"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/9.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/9.mp3",
+      "kind": "music-original",
+      "sha256": "80b090ca3ed9fa0e0fb2ccfd7c6554c8b4bc51711fcb6e3f48946decbfd250f1",
+      "bytes": 342351,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/9.mp3",
+        "blob": "984934016813865e551541bcecfc5a10a74cab4a"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/chill beat 1.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/chill beat 1.mp3",
+      "kind": "music-original",
+      "sha256": "f59d7ef32e06562553d095ebe7da805421bfb86d21f364e740a870a2cd339687",
+      "bytes": 4505600,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/chill beat 1.mp3",
+        "blob": "4f1afa4c35840e12c0068ce506fd724d52293dcd"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/coma-media-sky-wind-140223.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/coma-media-sky-wind-140223.mp3",
+      "kind": "music-original",
+      "sha256": "a0fd0cf08a8a2349e300eb283abe2b87717cb8a15cb1184d9da65e6f59593f35",
+      "bytes": 4518974,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/coma-media-sky-wind-140223.mp3",
+        "blob": "a9f25fbb718a39b6bbad5a8c1c8e004f19e27003"
+      }
+    },
+    {
+      "file": "ban-goc/background-music/redproductions-inspiring-story-157524.mp3",
+      "destination": "Nhạc nền/Nhạc từ bản gốc/redproductions-inspiring-story-157524.mp3",
+      "kind": "music-original",
+      "sha256": "9aa73e195d54dfe8602a8ed33976dd263816fc3872a1b953b04c8ea719f2402a",
+      "bytes": 4233926,
+      "exampleOnly": false,
+      "source": {
+        "repository": "phuongnguyendhtm/FreeUp-Content-Agent",
+        "commit": "65ebff0eb4cc2510b47ab7900aef81080c3d91b2",
+        "path": "media-input/background-music/redproductions-inspiring-story-157524.mp3",
+        "blob": "4dd9ba38a979716f452f22f7a46a57f64db6acdf"
+      }
     }
   ]
 }

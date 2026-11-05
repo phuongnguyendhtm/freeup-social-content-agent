@@ -1,4 +1,12 @@
-# Kiểm thử 2.1.0 — 30/10/2026
+# Kiểm thử 2.1.1 — 05/11/2026
+
+- Bổ sung ba ảnh cá nhân, ba ảnh nhân vật, ba video nền và 14 MP3 từ repo FreeUp-Content-Agent của chủ bộ quà tặng. Đối chiếu 23 Git blob SHA-1/kích thước với commit 65ebff0; không chỉnh sửa byte nguồn. Manifest ghi nguồn từng file và SHA-256.
+- Giữ nguyên checksum của cả 11 tài nguyên 2.1.0, gồm nhạc tập trung FreeUp, logo, Foxy và menu. Tổng 34 tài nguyên.
+- ffprobe đọc được toàn bộ 23 file thêm mới. Ba clip H.264 1080×1920, thời lượng 4,03 / 3,57 / 6,07 giây. Không dùng file mẫu để tự tạo hoặc xác nhận hồ sơ học viên.
+- Windows Node 24: 86/86 test đạt, gồm cài mới/cài lại, EPERM, chuyển dữ liệu và bảo toàn file khách. verify:release đạt và kiểm đủ 3/3/3 mẫu cùng 14 MP3, nguồn Git blob không thay đổi.
+- Tài liệu làm rõ không bắt buộc Pexels/Gemini cho luồng local, chưa có adapter gọi hai API đó. Cập nhật chú thích vận hành của reference Reels cũ; tiêu chuẩn kịch bản và thiết kế giữ nguyên.
+
+## Lịch sử kiểm thử 2.1.0 — 30/10/2026
 
 - Windows: 86/86 test đạt trên Node 24.22.1 và 22.22.3. Kiểm tra phiên bản, chín skill và checksum 11 tài nguyên đạt; quick_validate xác nhận entrypoint cùng chín SKILL.md.
 - Thử thư mục có dấu/khoảng trắng, ghi nhớ project qua lần cài mới, chuyển dữ liệu cũ, xung đột dữ liệu, cài bị ngắt ở ba giai đoạn, lỗi media sau chuyển state v1 → v2 và cài lại. Nguồn cũ được giữ, receipt lỗi không báo thành công.

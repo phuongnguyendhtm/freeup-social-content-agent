@@ -1,5 +1,9 @@
 # Sản xuất và kiểm tra
 
+Các file trong Mẫu tham khảo là tư liệu minh họa từ bản gốc, không phải hồ sơ/hình ảnh học viên. Chỉ dùng ảnh/video mẫu khi khách chọn rõ để thử; không tự dùng mẫu thay cho ảnh cá nhân hoặc avatar. Dùng đúng ảnh nhân vật được nhắc tới.
+
+FreeUp không yêu cầu thêm API Pexels/Gemini cho luồng local. Chưa có adapter tìm Pexels hoặc tạo ảnh Gemini: quy tắc video_source_override=pexels trong reference nguồn là mô tả môi trường cũ, không phải khả năng hiện tại. Dùng footage local hoặc công cụ host được phép; thiếu tư liệu thì yêu cầu file phù hợp. Không yêu cầu key để tiếp tục công việc vốn làm được bằng file có sẵn.
+
 Đọc tiêu chuẩn đầy đủ của chuyên môn đã chọn. brief JSON dùng id/channel/format, title/body/points/layout; carousel có slides. Sáu layout ảnh: portrait, split, center, metric, tweet, venn. Carousel: cover, portrait, center, split, list, quote, before-after, tags, checklist, device. Infographic: duel, growth, insight. Ảnh 1080×1350, carousel 1080×1080, infographic 1080×1350. Ảnh mục tiêu 20–40 từ, tối đa 50 từ; carousel khoảng 30–50 từ/trang nhưng có thể ít hơn khi đủ ý; infographic tối đa 4–5 ý. Caption theo tiêu chuẩn định dạng nguồn, không lấy chữ ngắn trên ảnh làm caption thay cho bài gốc.
 
 Ảnh thật truyền asset là đường dẫn trong project; portrait bắt buộc đúng người. Không có ảnh thì dùng bố cục chữ. Có thể tạo HTML riêng theo CSS nguồn: htmlFile trong project, có main bao vùng nội dung, không JS/iframe/on-event/nguồn mạng. Nhúng ảnh local bằng data URI (runtime/design.cjs data) hoặc dùng data-asset="Tài nguyên đầu vào/...png" trên img; renderer tự nhúng. Không để data-img-vault chưa được giải quyết. HTML riêng vẫn kiểm chữ/tràn. Lỗi tràn: rút chữ/chia trang hoặc chỉnh bố cục rồi render lại; không báo đạt.

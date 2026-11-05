@@ -1,4 +1,4 @@
-# Cài FreeUp 2.1.0 trên 9BizClaw
+# Cài FreeUp 2.1.1 trên 9BizClaw
 
 ## Chọn thư mục
 
