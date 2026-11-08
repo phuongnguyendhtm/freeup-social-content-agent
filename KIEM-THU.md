@@ -1,4 +1,12 @@
-# Kiểm thử 2.1.1 — 05/11/2026
+# Kiểm thử 2.1.2 — 08/11/2026
+
+- Sửa lỗi đóng gói: bản 2.1.1 để file thật trong Hệ thống/assets và chỉ chép sang đầu vào khi cài; bản mới đưa đủ 34 file vào Tài nguyên đầu vào ngay trong gói tải và repo.
+- Giữ nguyên byte của 3 ảnh cá nhân, 3 ảnh nhân vật, 3 video nền, 14 MP3 và 11 tài nguyên FreeUp. Kiểm checksum, kích thước cho cả bản nguồn và bản hiển thị.
+- Thêm ca kiểm tra thiếu mẫu trước cài: thất bại trên cấu trúc 2.1.1, đạt sau sửa. Thử thay ảnh trước lần cài đầu và đồng bộ lại: file học viên được giữ nguyên, các mẫu không đổi được ghi nhận đúng.
+- Windows Node 24: 87/87 test đạt; verify:release đạt. Không đổi mã bộ cài native, nhánh phục hồi EPERM, công cụ dựng hoặc tiêu chuẩn sản xuất.
+- Chỉ cho phép các tên mẫu cụ thể được Git theo dõi; file tư liệu khác, hồ sơ, thành phẩm và dữ liệu thử vẫn bị loại khỏi gói.
+
+## Lịch sử kiểm thử 2.1.1 — 05/11/2026
 
 - Bổ sung ba ảnh cá nhân, ba ảnh nhân vật, ba video nền và 14 MP3 từ repo FreeUp-Content-Agent của chủ bộ quà tặng. Đối chiếu 23 Git blob SHA-1/kích thước với commit 65ebff0; không chỉnh sửa byte nguồn. Manifest ghi nguồn từng file và SHA-256.
 - Giữ nguyên checksum của cả 11 tài nguyên 2.1.0, gồm nhạc tập trung FreeUp, logo, Foxy và menu. Tổng 34 tài nguyên.

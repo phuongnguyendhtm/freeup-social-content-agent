@@ -1,10 +1,10 @@
 # FreeUp — bộ quà tặng cho học viên 9BizClaw
 
-Phiên bản **2.1.1**: một thư mục FreeUp cố định để thêm tư liệu, tạo nội dung và lấy thành phẩm. Học viên ra lệnh trong 9BizClaw, xem kết quả rồi tự đăng.
+Phiên bản **2.1.2**: một thư mục FreeUp cố định để thêm tư liệu, tạo nội dung và lấy thành phẩm. Học viên ra lệnh trong 9BizClaw, xem kết quả rồi tự đăng.
 
 ## Cài một lần
 
-[Tải FreeUp 2.1.1 — ZIP](https://github.com/phuongnguyendhtm/freeup-social-content-agent/releases/download/v2.1.1/FreeUp-Content-Agent-2.1.1-9BizClaw.zip). Giải nén, lấy thư mục FreeUp bên trong đặt ở vị trí cố định như D:\FreeUp. Gửi cho 9BizClaw:
+[Tải FreeUp 2.1.2 — ZIP](https://github.com/phuongnguyendhtm/freeup-social-content-agent/releases/download/v2.1.2/FreeUp-Content-Agent-2.1.2-9BizClaw.zip). Giải nén, lấy thư mục FreeUp bên trong đặt ở vị trí cố định như D:\FreeUp. Gửi cho 9BizClaw:
 
 > Cài FreeUp từ thư mục D:\FreeUp theo INSTALL.md, gồm công cụ ảnh/video. Dùng thư mục này làm nơi làm việc, giữ dữ liệu hiện có và chạy đầy đủ kiểm tra trước khi báo xong.
 
@@ -31,14 +31,16 @@ Chọn số hoặc nói trực tiếp, ví dụ **“Làm carousel 5 trang về 
 
 ## Các thư mục
 
-- **Tài nguyên đầu vào:** ảnh cá nhân, ảnh nhân vật, ảnh minh họa, video nền, nhạc, giọng đọc, thương hiệu và Mẫu FreeUp. Mỗi thư mục có hướng dẫn tiếng Việt; mẫu được thêm khi cài.
+- **Tài nguyên đầu vào:** ảnh cá nhân, ảnh nhân vật, ảnh minh họa, video nền, nhạc, giọng đọc, thương hiệu và Mẫu FreeUp. Mỗi thư mục có hướng dẫn tiếng Việt; có sẵn ảnh, video và nhạc mẫu ngay khi giải nén, không cần chạy bộ cài để xem mẫu.
 - **Nội dung đã tạo:** ngày / kênh / mã bài / định dạng tiếng Việt; Bài viết.txt, Bài gốc.md và các bản dựng ảnh/video.
 - **Dữ liệu vận hành:** hồ sơ đã xác nhận, lịch sử và biên nhận kiểm tra. Giữ khi sao lưu.
 - **Hệ thống:** skills, workflows, runtime, assets, bộ cài và kiểm thử. Các tên kỹ thuật cần cho tương thích vẫn giữ nguyên.
 
 Giữ nguyên vị trí thư mục sau cài. Khi cập nhật, giải nén bản mới ở nơi riêng rồi yêu cầu cập nhật vào thư mục FreeUp đang dùng; không giải nén đè tư liệu.
 
-Mẫu đầu vào: **3 ảnh cá nhân, 3 ảnh nhân vật, 3 video nền và 14 MP3 giữ nguyên từ bản gốc của chị Phương**. Sau cài, mẫu nằm trong thư mục tương ứng để học viên xem và thay bằng tư liệu của mình. Các tài nguyên FreeUp trước đây vẫn giữ.
+Mẫu đầu vào: **3 ảnh cá nhân, 3 ảnh nhân vật, 3 video nền và 14 MP3 giữ nguyên từ bản gốc của chị Phương**. Ngay khi tải và giải nén, mẫu đã nằm trong thư mục tương ứng để học viên xem và thay bằng tư liệu của mình. Các tài nguyên FreeUp trước đây vẫn giữ.
+
+Mở **Tài nguyên đầu vào** → **Nhạc nền/Nhạc từ bản gốc** để nghe 14 MP3; **Ảnh cá nhân/Mẫu tham khảo**, **Ảnh nhân vật/Mẫu tham khảo** và **Video nền/Mẫu tham khảo** có ba file mỗi loại. Các file thật cũng hiển thị trong các thư mục này trên GitHub.
 
 **Không bắt buộc API Pexels/Gemini** cho viết bài và dựng media từ tư liệu có sẵn. Tìm tư liệu tự động qua Pexels và tạo ảnh mới qua Gemini API chưa tích hợp; thêm key đơn thuần không bật tính năng này. Xem [API và tài nguyên mẫu](API%20và%20tài%20nguyên%20mẫu.md).
 

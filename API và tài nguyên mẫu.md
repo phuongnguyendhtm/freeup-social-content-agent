@@ -11,7 +11,7 @@ FreeUp dùng AI đã được cấu hình trong 9BizClaw để nghiên cứu và
 
 Nhập API key riêng không tự bật những tính năng chưa tích hợp. Không đưa key vào thư mục tư liệu hay GitHub. Khi thiếu ảnh/video đúng chủ đề, thêm file của bạn hoặc dùng công cụ được phép trên host; AI không được báo đã tạo/tải file khi chưa có file thật.
 
-Bộ mẫu từ repo FreeUp-Content-Agent của chị Phương: ba ảnh cá nhân, ba ảnh nhân vật, ba clip nền khác cảnh và 14 file nhạc nền giữ nguyên byte/tên gốc. Các mẫu FreeUp đã có vẫn giữ. Bộ cài tự chép mẫu vào Tài nguyên đầu vào; file gốc đóng gói trong Hệ thống/assets/ban-goc.
+Bộ mẫu từ repo FreeUp-Content-Agent của chị Phương: ba ảnh cá nhân, ba ảnh nhân vật, ba clip nền khác cảnh và 14 file nhạc nền giữ nguyên byte/tên gốc. Các mẫu FreeUp đã có vẫn giữ. Mẫu có sẵn trong Tài nguyên đầu vào ngay khi tải và giải nén, không cần cài đặt để xem/nghe. Hệ thống/assets giữ bản nguồn để bộ cài bổ sung file thiếu và cập nhật; file bạn đã sửa được giữ nguyên.
 
 Ảnh/video trong Mẫu tham khảo giúp hiểu loại file cần chuẩn bị. Chép tư liệu của bạn vào thư mục cùng loại, nêu tên file muốn dùng. Không lấy người trong mẫu làm chủ thương hiệu/học viên, không dùng mẫu làm avatar hoặc video cá nhân nếu chưa được yêu cầu rõ. Ba ảnh nhân vật chỉ minh họa cách sắp tư liệu; nội dung nhắc ai phải dùng đúng ảnh người đó. Không suy ra lời nói, chứng thực hay quan hệ thương hiệu từ ảnh.
 
